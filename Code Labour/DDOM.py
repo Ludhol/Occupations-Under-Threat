@@ -1,4 +1,3 @@
-# setup network
 # Required packages (check which are required)
 import matplotlib.pyplot as plt
 from matplotlib.patches import Patch
@@ -10,13 +9,13 @@ import datetime as dt
 import community
 from shapely.geometry import Polygon
 
-import statsmodels.tsa.api as tsa
-
 import random
 import math
 
 import cmocean as cmo
 
+
+# setup network
 def set_attributes(G, data):
     '''
     Initialises the node attributes of the occupational mobility network.
@@ -46,6 +45,7 @@ def set_attributes(G, data):
     
     # Set attrbutes
     for key, value in attributes.items():
+
         nx.set_node_attributes(G, value, str(key))
 
 def make_vacancies(G, delta_ny, gamma_ny):
@@ -255,6 +255,7 @@ def shock(G, demand_0, final_demand, t, t_0, k):
     k (float): 
 
     '''
+    
     employed = nx.get_node_attributes(G, 'employed')
     demand_shock = {}
     target_demand = {}
@@ -287,7 +288,7 @@ def calibration_calculation(empirical_data, model_data, A_e):
     m_seq = [(u, m_vac_rate[i]) for i, u in enumerate(m_unemployed)]
    
 
-    fig, ax = plt.subplots()
+
     plt.plot(m_unemployed, m_vac_rate, ls = '-', marker = 'o', linewidth = 1, markersize = 2)
     plt.show()
 
@@ -313,6 +314,7 @@ def calibration_calculation(empirical_data, model_data, A_e):
             cost = intersection_area/union_area
             print('Union area: ', union_area, 'Intersection_area: ', intersection_area)
     except:
+        cost = 'N/A'
         print('Cost not calculated')
 
     return {'cost':cost, 'intersection':intersection_area, 'union':union_area}
@@ -336,7 +338,7 @@ def simulation(G, years, timestep, delta_u, gamma_u, delta_ny, gamma_ny, empiric
 
     #set_attributes(G, data)
     # This needs to be put into the network (used as starting point)
-
+    time_0 = dt.datetime.now()
     for key, value in attributes.items():
         nx.set_node_attributes(G, value, str(key))
 
@@ -359,6 +361,11 @@ def simulation(G, years, timestep, delta_u, gamma_u, delta_ny, gamma_ny, empiric
     risk_factor = nx.get_node_attributes(G, 'comp_prob')
     average_hours_worked_0 = avg_hours_0
     
+    # Empirical data
+    e_vac_rate = empirical_data['sa_vac_rate']
+    e_unemployed = empirical_data['u_trend']
+    e_seq = [(u, e_vac_rate.iloc[i]) for i, u in enumerate(e_unemployed)]
+    A_e = Polygon(e_seq)
 
     final_hours_worked = {}
 
@@ -388,8 +395,7 @@ def simulation(G, years, timestep, delta_u, gamma_u, delta_ny, gamma_ny, empiric
     
 
     model_data = {'vacancies': vac_data, 'unemployment': unemp_data, 'employment':emp_data}
-    print('a: ', a, 'delta_u', delta_u, 'delta_ny', delta_ny)
-    cost = calibration_calculation(empirical_data, model_data)
+    cost = calibration_calculation(empirical_data, model_data, A_e)
 
     vac_data = pd.DataFrame(vac_data)
     unemp_data = pd.DataFrame(unemp_data)
@@ -437,11 +443,7 @@ def deterministic_simulation(G, years, timestep, delta_u, gamma_u, delta_ny, gam
     # Post shock demand
     final_demand = {occupation:hours/final_average_hours_worked for occupation, hours in final_hours_worked.items()}
 
-    # Empirical data
-    e_vac_rate = empirical_data['sa_vac_rate']
-    e_unemployed = empirical_data['u_trend']
-    e_seq = [(u, e_vac_rate.iloc[i]) for i, u in enumerate(e_unemployed)]
-    A_e = Polygon(e_seq)
+
 
     occupations = list(G.nodes())
     time = dt.datetime.now()
@@ -491,7 +493,8 @@ def deterministic_simulation(G, years, timestep, delta_u, gamma_u, delta_ny, gam
             new_u[i] = u[i] + delta_u*e[i] + (1 - delta_u)*gamma_u*demand_diff - f_j
 
             demand_diff = max(0, target_demand[i]-current_demand[i])
-            new_ny[i] = ny[i] + delta_ny*e[i] + (1-delta_ny)*demand_diff - f_i
+
+            new_ny[i] = ny[i] + delta_ny*e[i] + (1-delta_ny)*gamma_u*demand_diff - f_i
 
         nx.set_node_attributes(G, new_ny, 'vacancies')
         nx.set_node_attributes(G, new_e, 'employed')
@@ -507,14 +510,20 @@ def deterministic_simulation(G, years, timestep, delta_u, gamma_u, delta_ny, gam
         #    shock(G, demand_0, final_demand, t, t_0, k)
 
     model_data = {'vacancies': vac_data, 'unemployment': unemp_data, 'employment':emp_data}
-    print('a: ', a, 'delta_u', delta_u, 'delta_ny', delta_ny)
+    # Empirical data
+    e_vac_rate = empirical_data['sa_vac_rate']
+    e_unemployed = empirical_data['u_trend']
+    e_seq = [(u, e_vac_rate.iloc[i]) for i, u in enumerate(e_unemployed)]
+    A_e = Polygon(e_seq)
 
     cost = calibration_calculation(empirical_data, model_data, A_e)
 
     vac_data = pd.DataFrame(vac_data)
     unemp_data = pd.DataFrame(unemp_data)
     emp_data = pd.DataFrame(emp_data)
-    print('Simulation took: ', dt.datetime.now()-time)
+    time = dt.datetime.now()-time
+    print('Simulation took: ', time)
+    cost['time'] = time
     if calibration_output == True:
         return cost
     else:
