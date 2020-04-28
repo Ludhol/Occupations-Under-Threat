@@ -1,4 +1,22 @@
 # setup network
+# Required packages (check which are required)
+import matplotlib.pyplot as plt
+from matplotlib.patches import Patch
+import networkx as nx
+import pandas as pd
+import numpy as np
+import scipy as sp
+import datetime as dt
+import community
+from shapely.geometry import Polygon
+
+import statsmodels.tsa.api as tsa
+
+import random
+import math
+
+import cmocean as cmo
+
 def set_attributes(G, data):
     '''
     Initialises the node attributes of the occupational mobility network.
@@ -237,7 +255,7 @@ def shock(G, demand_0, final_demand, t, t_0, k):
     k (float): 
 
     '''
-
+    employed = nx.get_node_attributes(G, 'employed')
     demand_shock = {}
     target_demand = {}
 
@@ -248,7 +266,7 @@ def shock(G, demand_0, final_demand, t, t_0, k):
     nx.set_node_attributes(G, target_demand, 'target demand')
 
 
-def calibration_calculation(empirical_data, model_data, A_e, fast = True):
+def calibration_calculation(empirical_data, model_data, A_e):
     '''
     This is the function to be minimised during calibration.abs
 
@@ -272,10 +290,6 @@ def calibration_calculation(empirical_data, model_data, A_e, fast = True):
     fig, ax = plt.subplots()
     plt.plot(m_unemployed, m_vac_rate, ls = '-', marker = 'o', linewidth = 1, markersize = 2)
     plt.show()
-    if fast == False:
-        fig, ax = plt.subplots()
-        plt.plot(e_unemployed, e_vac_rate, ls = '-', marker = 'o', linewidth = 1, markersize = 2)
-        plt.show()
 
     if Polygon(m_seq).is_valid == True:
         A_m = Polygon(m_seq)
