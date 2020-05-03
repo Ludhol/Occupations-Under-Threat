@@ -276,27 +276,49 @@ def calibration_calculation(empirical_data, model_data, A_e):
     model_data (dict): timeseries of vacancies and unemployment
     '''
 
+    start = 35
+    end = -15
 
-    m_vacancies = [sum(model_data['vacancies'][i].values()) for i in range(len(model_data['vacancies']))]
-    m_employed = [sum(model_data['employment'][i].values()) for i in range(len(model_data['employment']))]
+    m_vacancies = [sum(model_data['vacancies'][i].values()) for i in range(len(model_data['vacancies']))][start:end]
+    m_employed = [sum(model_data['employment'][i].values()) for i in range(len(model_data['employment']))][start:end]
 
-    m_vac_rate = [m_vacancies[i]*100/(m_vacancies[i] + m_employed[i]) for i in range(len(m_employed))]
+    m_vac_rate = [m_vacancies[i]*100/(m_vacancies[i] + e) for i, e in enumerate(m_employed)]
 
-    m_unemployed = [sum(model_data['unemployment'][i].values()) for i in range(len(model_data['unemployment']))]
+    m_unemployed = [sum(model_data['unemployment'][i].values()) for i in range(len(model_data['unemployment']))][start:end]
     m_unemployed = [u*100/(m_employed[i]+ u) for i, u in enumerate(m_unemployed)]
+
+    vac_max = np.max(m_vac_rate)
+    vac_min = np.min(m_vac_rate)
+    u_max = np.max(m_unemployed)
+    u_min = np.min(m_unemployed)
 
     m_seq = [(u, m_vac_rate[i]) for i, u in enumerate(m_unemployed)]
    
+    fig, ax = plt.subplots()
+    cols = ["#69b243", "#ad5ec7"]
+    ax_bounds = [4, 11, 0.2, 4]
+    ax.axis(ax_bounds)
+    ax.xaxis.set_ticks(np.arange(ax_bounds[0], ax_bounds[1], 1))
+    ax.yaxis.set_ticks(np.arange(ax_bounds[2], ax_bounds[3], 0.5))
+    plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left', borderaxespad=0.)
+    ax.set_title("Simulated & Empirical Beveridge Curve", fontsize=16)
+    ax.set_xlabel('Unemployment')
+    ax.set_ylabel('Vacancy rate')
 
 
-    plt.plot(m_unemployed, m_vac_rate, ls = '-', marker = 'o', linewidth = 1, markersize = 2)
+    
+    plt.plot(empirical_data['u_trend'], empirical_data['sa_vac_rate'], color = cols[1], ls = '-', marker = 'o', linewidth = 1, markersize = 2)
+    plt.plot(m_unemployed, m_vac_rate, color = cols[0], ls = '-', marker = 'o', linewidth = 1, markersize = 2)
+    # plt.savefig('../Graphs/Beveridge_curve.pdf', dpi=425, bbox_inches='tight')
     plt.show()
 
     if Polygon(m_seq).is_valid == True:
-        A_m = Polygon(m_seq)
+        A_m = Polygon(m_seq).buffer(0)
+        m_area = A_m.area
     else:
         print('A_m is not valid')
-        return {'cost':'N/A', 'intersection':'N/A', 'union':'N/A'}
+        m_area = 'N/A'
+        return {'cost':'N/A', 'intersection':'N/A', 'union':'N/A', 'A_m': m_area}
     try:
         union_area = A_m.union(A_e).area
     except:
@@ -311,13 +333,13 @@ def calibration_calculation(empirical_data, model_data, A_e):
         cost = 'N/A'
     try:
         if A_m.union(A_e).is_valid == True and A_m.intersection(A_e).is_valid == True:
-            cost = intersection_area/union_area
-            print('Union area: ', union_area, 'Intersection_area: ', intersection_area)
+            cost = union_area - intersection_area
+            print('Cost:', cost, 'Union area:', union_area, 'Intersection_area:', intersection_area)
     except:
         cost = 'N/A'
         print('Cost not calculated')
 
-    return {'cost':cost, 'intersection':intersection_area, 'union':union_area}
+    return {'cost':cost, 'intersection':intersection_area, 'union':union_area, 'A_m': m_area, 'm_u_max':u_max, 'm_u_min':u_min, 'm_vac_max':vac_max, 'm_vac_min':vac_min}
 
 
 def simulation(G, years, timestep, delta_u, gamma_u, delta_ny, gamma_ny, empirical_data, t_0, k, L, avg_hours_0, a, T, shock_start, attributes, calibration_output = False):
@@ -513,15 +535,16 @@ def deterministic_simulation(G, years, timestep, delta_u, gamma_u, delta_ny, gam
     # Empirical data
     e_vac_rate = empirical_data['sa_vac_rate']
     e_unemployed = empirical_data['u_trend']
-    e_seq = [(u, e_vac_rate.iloc[i]) for i, u in enumerate(e_unemployed)]
-    A_e = Polygon(e_seq)
+    e_seq = [(u, e_vac_rate.iloc[i]) for i, u in enumerate(e_unemployed)]#
+    A_e = Polygon(e_seq).buffer(0)
 
     cost = calibration_calculation(empirical_data, model_data, A_e)
+    cost['A_e'] = A_e.area
 
     vac_data = pd.DataFrame(vac_data)
     unemp_data = pd.DataFrame(unemp_data)
     emp_data = pd.DataFrame(emp_data)
-    time = dt.datetime.now()-time
+    time = dt.datetime.now()- time
     print('Simulation took: ', time)
     cost['time'] = time
     if calibration_output == True:
