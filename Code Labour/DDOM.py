@@ -239,7 +239,7 @@ def update_target_demand(G, demand_0, t, T, a):
 
     target_demand = {}
     for node in G.nodes():
-        target_demand[node] = round(demand_0[node]*(1 + a*np.sin(t*2*np.pi/T)))
+        target_demand[node] = round(demand_0[node]*(1 - a*np.sin(t*2*np.pi/T)))
 
     nx.set_node_attributes(G, target_demand, 'target_demand')
 
@@ -354,7 +354,7 @@ def calibration_calculation(empirical_data, model_data, A_e, period):
     return cal_output
 
 
-def simulation(G, years, timestep, delta_u, gamma_u, delta_ny, gamma_ny, empirical_data, t_0, k, L, avg_hours_0, a, T, shock_start, attributes, calibration_output = False):
+def simulation(G, years, timestep, delta_u, gamma_u, delta_ny, gamma_ny, empirical_data, t_0, k, avg_hours_0, a, T, shock_start, attributes, calibration_output = False):
     '''
     Set attribute data of occupational mobility netowrk and carry out the simulation for a specified number of timesteps
 
@@ -393,6 +393,7 @@ def simulation(G, years, timestep, delta_u, gamma_u, delta_ny, gamma_ny, empiric
 
     # Variables to calculate the post shock demand
     risk_factor = nx.get_node_attributes(G, 'comp_prob')
+    # Need more data for average hours worked in a year
     average_hours_worked_0 = avg_hours_0
     
     # Empirical data
@@ -405,6 +406,9 @@ def simulation(G, years, timestep, delta_u, gamma_u, delta_ny, gamma_ny, empiric
 
     for occupation in risk_factor.keys():
         final_hours_worked[occupation] = average_hours_worked_0*employed[occupation]*(1-risk_factor[occupation])
+
+    # L should be the workforce at steady state (employed + unemployed) and should be calculated in the loop
+    L = sum(employed.values())
 
     final_average_hours_worked = sum(final_hours_worked.values())/L
 
@@ -447,7 +451,7 @@ def deterministic_simulation(G, years, timestep, delta_u, gamma_u, delta_ny, gam
     for key, value in attributes.items():
         nx.set_node_attributes(G, value, str(key))
 
-    timesteps = round(years*52/timestep)
+    timesteps = round(T*52/timestep)*3
     T_steps = round(T*52/timestep)
     t_0 = round(t_0/timestep)
 
@@ -538,8 +542,15 @@ def deterministic_simulation(G, years, timestep, delta_u, gamma_u, delta_ny, gam
         vac_data.append(nx.get_node_attributes(G, 'vacancies'))
         unemp_data.append(nx.get_node_attributes(G, 'unemployed'))
         emp_data.append(nx.get_node_attributes(G, 'employed'))
-        if t_0 < t:
-            update_target_demand(G, demand_0, t-t_0, T_steps, a)
+        if T_steps == t:
+            ss_e = new_e
+            ss_demand = {}
+            for occ, e in ss_e.items():
+                ss_demand[occ] = target_demand[occ] - (delta_u - delta_ny)*e/(gamma_u*(1-delta_ny))
+            
+
+        if T_steps < t:
+            update_target_demand(G, demand_0, t, T_steps, a)
 
         # order should be checked and changed
         # if t > shock_start:
@@ -565,6 +576,4 @@ def deterministic_simulation(G, years, timestep, delta_u, gamma_u, delta_ny, gam
         return cost
     else:
         return {'vacancy_data': vac_data, 'unemployment_data': unemp_data, 'employment_data': emp_data, 'cost': cost}
-
-
 
