@@ -48,7 +48,7 @@ def set_attributes(G, data):
 
         nx.set_node_attributes(G, value, str(key))
 
-def make_vacancies(G, delta_ny, gamma_ny):
+def make_vacancies(G, delta_nu, gamma_ny):
     '''
     Each occupation has a probability of making vacancies each time step that depends on the difference between
     current demand and target demand as well as an exogenous probability 
@@ -83,7 +83,7 @@ def make_vacancies(G, delta_ny, gamma_ny):
             else:
                 alpha_ny = gamma_ny*demand_diff/employed
 
-            p_ny = delta_ny + alpha_ny - delta_ny*alpha_ny
+            p_ny = delta_nu + alpha_ny - delta_nu*alpha_ny
 
             # Expected number of new vacancies - wrong
             # new_vacancies = round(p_ny*employed
@@ -278,7 +278,7 @@ def calibration_calculation(empirical_data, model_data, A_e, period):
     model_data (dict): timeseries of vacancies and unemployment
     '''
 
-    start = round(period*1.5)
+    start = round(period*2)
     end = -1
 
     m_vacancies = [sum(model_data['vacancies'][i].values()) for i in range(len(model_data['vacancies']))]
@@ -309,6 +309,8 @@ def calibration_calculation(empirical_data, model_data, A_e, period):
     # plt.savefig('../Graphs/Beveridge_curve.pdf', dpi=425, bbox_inches='tight')
     plt.show()
 
+    u_ss = m_unemployed[-1]
+    vac_ss = m_vac_rate[-1]
 
     m_vac_rate = m_vac_rate[start:end]
     m_unemployed = m_unemployed[start:end]
@@ -317,6 +319,9 @@ def calibration_calculation(empirical_data, model_data, A_e, period):
     vac_min = np.min(m_vac_rate)
     u_max = np.max(m_unemployed)
     u_min = np.min(m_unemployed)
+
+
+
     m_seq = [(u, m_vac_rate[i]) for i, u in enumerate(m_unemployed)]
 
     if Polygon(m_seq).is_valid == True:
@@ -328,7 +333,8 @@ def calibration_calculation(empirical_data, model_data, A_e, period):
         cost = 'N/A'
         intersection_area = 'N/A'
         union_area = 'N/A'
-        return {'cost':cost, 'intersection':intersection_area, 'union':union_area, 'A_m': m_area, 'm_u_max':u_max, 'm_u_min':u_min, 'm_vac_max':vac_max, 'm_vac_min':vac_min}
+        return {'cost':cost, 'intersection':intersection_area, 'union':union_area, 'A_m': m_area, 
+        'm_u_max':u_max, 'm_u_min':u_min, 'm_vac_max':vac_max, 'm_vac_min':vac_min, 'm_u_ss':u_ss, 'm_vac_ss': vac_ss}
     try:
         union_area = A_m.union(A_e).area
     except:
@@ -343,18 +349,19 @@ def calibration_calculation(empirical_data, model_data, A_e, period):
         cost = 'N/A'
     try:
         if A_m.union(A_e).is_valid == True and A_m.intersection(A_e).is_valid == True:
-            cost = union_area - intersection_area
+            cost = abs(intersection_area/union_area - 1)
             print('Cost:', cost, 'Union area:', union_area, 'Intersection_area:', intersection_area)
     except:
         cost = 'N/A'
         print('Cost not calculated')
 
-    cal_output = {'cost':cost, 'intersection':intersection_area, 'union':union_area, 'A_m': m_area, 'm_u_max':u_max, 'm_u_min':u_min, 'm_vac_max':vac_max, 'm_vac_min':vac_min}
-    print(cal_output)
+    cal_output = {'cost':cost, 'intersection':intersection_area, 'union':union_area, 'A_m': m_area, 
+    'm_u_max':u_max, 'm_u_min':u_min, 'm_u_ss':u_ss, 'm_vac_max':vac_max, 'm_vac_min':vac_min, 'm_vac_ss':vac_ss}
+    # print(cal_output)
     return cal_output
 
 
-def simulation(G, years, timestep, delta_u, gamma_u, delta_ny, gamma_ny, empirical_data, t_0, k, avg_hours_0, a, T, shock_start, attributes, calibration_output = False):
+def simulation(G, years, timestep, delta_u, gamma_u, delta_nu, gamma_ny, empirical_data, t_0, k, avg_hours_0, a, T, shock_start, attributes, calibration_output = False):
     '''
     Set attribute data of occupational mobility netowrk and carry out the simulation for a specified number of timesteps
 
@@ -365,7 +372,7 @@ def simulation(G, years, timestep, delta_u, gamma_u, delta_ny, gamma_ny, empiric
     years (int): Number of years for the simulation
     timestep (float): size of each timestep in terms of weeks
     delta_u (float): probability of spontanous seperation
-    delta_ny (float): probability of spontanously opneing vacancy
+    delta_nu (float): probability of spontanously opneing vacancy
     gamma_u (float): speed of unemployed adjustment towards target demand
     gamma_ny (float): speed of vacancy adjustment towards target demand
     '''
@@ -418,7 +425,7 @@ def simulation(G, years, timestep, delta_u, gamma_u, delta_ny, gamma_ny, empiric
     for t in range(timesteps):
         handle_applications(G)
         make_applications(G)
-        make_vacancies(G, delta_ny, gamma_ny)
+        make_vacancies(G, delta_nu, gamma_ny)
         separate_workers(G, delta_u, gamma_u)
 
         # order should be checked and changed
@@ -444,7 +451,7 @@ def simulation(G, years, timestep, delta_u, gamma_u, delta_ny, gamma_ny, empiric
     else:
         return {'vacancy_data': vac_data, 'unemployment_data': unemp_data, 'employment_data': emp_data, 'cost': cost}
 
-def deterministic_simulation(G, years, timestep, delta_u, gamma_u, delta_ny, gamma_ny, empirical_data, t_0, k, L, avg_hours_0, a, T, shock_start, attributes, calibration_output = False):
+def deterministic_simulation(G, years, timestep, delta_u, gamma_u, delta_nu, gamma_ny, empirical_data, t_0, k, L, avg_hours_0, a, T, shock_start, attributes, calibration_output = False):
     #set_attributes(G, data)
     # This needs to be put into the network (used as starting point)
 
@@ -533,7 +540,7 @@ def deterministic_simulation(G, years, timestep, delta_u, gamma_u, delta_ny, gam
 
             demand_diff = max(0, target_demand[i]-current_demand[i])
 
-            new_ny[i] = ny[i] + delta_ny*e[i] + (1-delta_ny)*gamma_u*demand_diff - f_i
+            new_ny[i] = ny[i] + delta_nu*e[i] + (1-delta_nu)*gamma_u*demand_diff - f_i
 
         nx.set_node_attributes(G, new_ny, 'vacancies')
         nx.set_node_attributes(G, new_e, 'employed')
@@ -542,12 +549,6 @@ def deterministic_simulation(G, years, timestep, delta_u, gamma_u, delta_ny, gam
         vac_data.append(nx.get_node_attributes(G, 'vacancies'))
         unemp_data.append(nx.get_node_attributes(G, 'unemployed'))
         emp_data.append(nx.get_node_attributes(G, 'employed'))
-        if T_steps == t:
-            ss_e = new_e
-            ss_demand = {}
-            for occ, e in ss_e.items():
-                ss_demand[occ] = target_demand[occ] - (delta_u - delta_ny)*e/(gamma_u*(1-delta_ny))
-            
 
         if T_steps < t:
             update_target_demand(G, demand_0, t, T_steps, a)

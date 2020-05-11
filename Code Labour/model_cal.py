@@ -40,18 +40,18 @@ def cal_algo(params):
 
     # Loop should give result = {dict with parameters:dict with outputs}
     results = []
-    no_sim = len(parameters['timestep'])*len(parameters['delta_u'])*len(parameters['delta_ny'])*len(parameters['gamma_u'])*len(parameters['a'])
+    no_sim = len(parameters['timestep'])*len(parameters['delta_u'])*len(parameters['delta_nu'])*len(parameters['gamma_u'])*len(parameters['a'])
     print('Number of simulations -ish:', no_sim)
     simulation_index = 0
     for timestep in parameters['timestep']:
         for delta_u in parameters['delta_u']:
-            for delta_ny in parameters['delta_ny']:
+            for delta_nu in parameters['delta_nu']:
                 for gamma_u in parameters['gamma_u']:
                     for a in parameters['a']: 
-                        if delta_u <= delta_ny:
+                        if delta_u <= delta_nu:
                             continue
                         print('Simulation index:', simulation_index)
-                        print('a:', a, 'delta_u:', delta_u, 'delta_ny:', delta_ny, 'gamma_u:', gamma_u, 'timestep:', timestep)
+                        print('a:', a, 'delta_u:', delta_u, 'delta_nu:', delta_nu, 'gamma_u:', gamma_u, 'timestep:', timestep)
                         employment = employment_SSYK[['SSYK', '2014']]
                         employment = {str(employment['SSYK'].iloc[i]):employment['2014'].iloc[i] for i in range(len(employment))}
                         node_names = list(G.nodes())
@@ -68,10 +68,10 @@ def cal_algo(params):
                         'target_demand':target_demand, 'comp_prob':of_data}
 
                         # Save parameters
-                        out_parameters = {'a':a, 'delta_u':delta_u, 'delta_ny':delta_ny, 'gamma_u':gamma_u, 'timestep':timestep}
+                        out_parameters = {'a':a, 'delta_u':delta_u, 'delta_nu':delta_nu, 'gamma_u':gamma_u, 'timestep':timestep}
 
                         # Run simulation
-                        output = DDOM.deterministic_simulation(G, parameters['years'], timestep, delta_u, gamma_u, delta_ny, gamma_u, empirical_data,
+                        output = DDOM.deterministic_simulation(G, parameters['years'], timestep, delta_u, gamma_u, delta_nu, gamma_u, empirical_data,
                         parameters['t_0'], parameters['k'], parameters['L'], parameters['avg_hours_0'], a, parameters['T'], parameters['shock_start'],
                         attributes, calibration_output)
                         
