@@ -244,6 +244,21 @@ def update_target_demand(G, demand_0, t, T, a):
     nx.set_node_attributes(G, target_demand, 'target_demand')
 
 
+def long_term_u(u, f_i, omega, k, t):
+    '''
+    Function that calculates the long term unemployment of each occupation
+    All input varaibles except k are vectors with length of the number of occupations
+    '''
+
+    if k == 0 and t == 0:
+        return omega
+    elif k == 0:
+        return long_term_u(u, f_i, omega, 0, t - 1)*(1 - f_i/u)
+    elif t == 0:
+        return long_term_u(u, f_i, omega, k, 0)*(1 - f_i/u)
+    return long_term_u(u, f_i, omega, k - 1, t - 1)*(1 - f_i/u)
+
+
 def shock(G, demand_0, final_demand, t, t_0, k):
     '''
     function that implements the labour demand shock
@@ -257,16 +272,15 @@ def shock(G, demand_0, final_demand, t, t_0, k):
     k (float): 
 
     '''
-    
-    employed = nx.get_node_attributes(G, 'employed')
+
     demand_shock = {}
     target_demand = {}
 
-    for key in employed.keys():
-        demand_shock[key] = (final_demand[key] - demand_0[key])/(1 + np.exp(k*(t-t_0)))
-        target_demand[key] = demand_0[key] + demand_shock[key]
+    for key in demand_0.keys():
+        demand_shock[key] = (final_demand[key] - demand_0[key])/(1 + math.exp(-k*(t-t_0)))
+        target_demand[key] = round(demand_0[key] + demand_shock[key])
 
-    nx.set_node_attributes(G, target_demand, 'target demand')
+    nx.set_node_attributes(G, target_demand, 'target_demand')
 
 
 def calibration_calculation(empirical_data, model_data, A_e, period):
@@ -319,8 +333,6 @@ def calibration_calculation(empirical_data, model_data, A_e, period):
     vac_min = np.min(m_vac_rate)
     u_max = np.max(m_unemployed)
     u_min = np.min(m_unemployed)
-
-
 
     m_seq = [(u, m_vac_rate[i]) for i, u in enumerate(m_unemployed)]
 
@@ -532,7 +544,7 @@ def deterministic_simulation(G, years, timestep, delta_u, gamma_u, delta_nu, gam
 
             f_i = sum([f[(j,i)] for j in G.predecessors(i)])
 
-            new_e[i] = e[i] - delta_u*e[i] + (1 - delta_u)*gamma_u*demand_diff + f_i
+            new_e[i] = e[i] - delta_u*e[i] - (1 - delta_u)*gamma_u*demand_diff + f_i
 
             f_j = sum([f[(i,j)] for j in G.successors(i)])
 
