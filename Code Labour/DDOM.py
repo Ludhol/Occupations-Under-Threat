@@ -1,57 +1,28 @@
-# Required packages (check which are required)
+# Required packages
 import matplotlib.pyplot as plt
-from matplotlib.patches import Patch
 import networkx as nx
 import pandas as pd
 import numpy as np
-import scipy as sp
 import datetime as dt
-import community
 from shapely.geometry import Polygon
-
 import random
 import math
 
-import cmocean as cmo
+'''
+This package is used to implement a Data Driven Network Model of the labour market. It's intended use is to analyse an Occupational Mobility Network
+under an automation shock. However, it may be used for similar analysis of any labour flow network and any exogenous labour demand shock. The code is entirely
+based on the methods and theories outlined in "Automation and Occupational Mobility: A data-driven network model" by R. Maria del Rio-Chanona et. al.,
+which may be found here: https://arxiv.org/pdf/1906.04086.pdf.
 
-
-# setup network
-def set_attributes(G, data):
-    '''
-    Initialises the node attributes of the occupational mobility network.
-    Parameters:
-    -----------
-    G (nx.graph): The occupational mobility network
-    data (?): Data used to specify attribute values
-    
-    setting up data will have the following form:
-    data (pd.DataFrame): Columns contain values for the attributes and rows are occupations
-
-    The attributes are:
-    employed (int): Number of employees in the occupation
-    unemplyed (int): Number of unemployed in the occupation
-    vacancies (int): Number of vacancies in the occupation
-    applications (list): List where the elements are the name of the occupation where the application is coming from
-    target_demand (int): The target demand of the occupation (exogenous and used for automation shock)
-    risk_factor (float): A value between 0 and 1 indicating the risk of a proffession (could be automation or corona or whatever)
-
-    Note that the current demand is implicit (=employed + vacancies)
-    '''
-    # Make dictionaries
-    attributes = data.to_dict()
-
-    # Add some variables
-    # attributes['target_demand']
-    
-    # Set attrbutes
-    for key, value in attributes.items():
-
-        nx.set_node_attributes(G, value, str(key))
+Author: Ludvig Holmér
+'''
 
 def make_vacancies(G, delta_nu, gamma_ny):
     '''
     Each occupation has a probability of making vacancies each time step that depends on the difference between
     current demand and target demand as well as an exogenous probability 
+    Each vacancy is a list since workers apply to specific vacancies within an occupation
+    If a worker applies to a vacancy, the occupation code which it came from is appended to the list
 
     Parameters:
     -----------
@@ -68,15 +39,14 @@ def make_vacancies(G, delta_nu, gamma_ny):
         # The occupation specificattribute values
         target_demand = td_dict[occupation]
         employed = emp_dict[occupation]
-        current_demand = vac_dict[occupation] + employed
-        
+        current_demand = len(vac_dict[occupation]) + employed
 
         # Calculate the probability of creating new vacancies (equation 10)
         demand_diff = max(0, target_demand - current_demand)
 
         # Zero Steady State rule
-        if employed == vac_dict[occupation] == 0 and target_demand > 0:
-            vacancies += 1
+        if employed == len(vac_dict[occupation]) == 0 and target_demand > 0:
+            vac_dict[occupation].append([])
         else:
             if demand_diff == 0 or employed == 0:
                 alpha_ny = 0
@@ -85,11 +55,10 @@ def make_vacancies(G, delta_nu, gamma_ny):
 
             p_ny = delta_nu + alpha_ny - delta_nu*alpha_ny
 
-            # Expected number of new vacancies - wrong
-            # new_vacancies = round(p_ny*employed
             new_vacancies = np.random.binomial(employed, p_ny)
             # Add the new vacancies to total number of vacancies
-            vac_dict[occupation] += new_vacancies
+            for _ in range(new_vacancies):
+                vac_dict[occupation].append([])
 
     nx.set_node_attributes(G, vac_dict, 'vacancies')
 
@@ -116,7 +85,7 @@ def separate_workers(G, delta_u, gamma_u):
         # The occupation specificattribute values
         target_demand = td_dict[occupation]
         employed = emp_dict[occupation]
-        vacancies = vac_dict[occupation]
+        vacancies = len(vac_dict[occupation])
 
         current_demand = vacancies + employed
 
@@ -141,8 +110,9 @@ def separate_workers(G, delta_u, gamma_u):
 
 def make_applications(G):
     '''
-    Each unemployed worker send out an application to a neighbouring occupation proportional to the edge weight
+    Each unemployed worker send out an application to a neighbouring occupation with probability proportional to the edge weight
     between the occupations
+    Once an occupation is chosen, a random vacancy within that occupation is applied to
 
     Parameters:
     -----------
@@ -150,18 +120,17 @@ def make_applications(G):
     '''
     # loop through every occupation and every unemployed person in the occupation and add applications in the 
     # applications attribute of the occupation that the worker applies to
-    app_dict = nx.get_node_attributes(G, 'applications')
-    unem_dict = nx.get_node_attributes(G, 'unemployed')
     vac_dict = nx.get_node_attributes(G, 'vacancies')
+    unem_dict = nx.get_node_attributes(G, 'unemployed')
 
     A_dict = nx.get_edge_attributes(G, 'weight')
 
-    for occupation in app_dict:
+    for occupation in vac_dict.keys():
         unemployed = unem_dict[occupation]
         neighbors = [n for n in G.neighbors(occupation)]
 
         # Calculate probabilities (equation 7)
-        vac_A_list = [vac_dict[n]* A_dict[(occupation, n)] for n in neighbors]
+        vac_A_list = [len(vac_dict[n])* A_dict[(occupation, n)] for n in neighbors]
         vac_A_sum = sum(vac_A_list)
         if vac_A_sum == 0:
             continue
@@ -170,10 +139,14 @@ def make_applications(G):
         # Each unemployed person chooses an occupation to apply to
         for _ in range(unemployed):
             # Choice is weighted by probabilities calculated above
-            apply_to = np.random.choice(neighbors, p = p_list)
+            apply_to_occ = np.random.choice(neighbors, p = p_list)
+            # When occupation chosen a random vacancy within that occupation is applied for
+            apply_to_vac = np.random.randint(len(vac_dict[apply_to_occ]))
+
             # Make the application
-            app_dict[apply_to].append(occupation)
-    nx.set_node_attributes(G, app_dict, 'applications')
+            vac_dict[apply_to_occ][apply_to_vac].append(occupation)
+
+    nx.set_node_attributes(G, vac_dict, 'vacancies')
 
 
 def handle_applications(G):
@@ -185,39 +158,39 @@ def handle_applications(G):
     G (nx.graph): The occupational mobility network
     '''
     # The attributes we need
-    app_dict = nx.get_node_attributes(G, 'applications')
     vac_dict = nx.get_node_attributes(G, 'vacancies')
     emp_dict = nx.get_node_attributes(G, 'employed')
     unemp_dict = nx.get_node_attributes(G, 'unemployed')
 
     # loop through all the occupations and try to accept the same number of applications as there are vacancies
-    for occupation in app_dict:
-        applications = app_dict[occupation]
+    for occupation in vac_dict.keys():
         vacancies = vac_dict[occupation]
-
-        filled_vacancies = 0
-        for j in range(vacancies):
-            if len(applications) == 0:
-                # if vacancies > len(applications) not all vacancies are filled
-                break
+        vacs = len(vacancies)
+        filled = 0
+        # Here vac is a list of applicants and vacancies is a list of lists
+        for vac in vacancies:
+            if len(vac) == 0:
+                # if no one applied for this vacancy -> continue to the next one
+                continue
             # A random application is chosen (and removed from the list of applications)
-            accepted = applications.pop(random.randrange(len(applications)))
-
+            accepted = np.random.choice(vac)
             # Increase the amount of employed people in the occupation by the number of filled vacancies
             emp_dict[occupation] += 1
-
             # Decrease the amount of unemployed people in the occupations where applications were accepted from
             unemp_dict[accepted] -= 1
-            # Number of filled vacancies
-            filled_vacancies = j + 1
-    
-        # Decrease the amount of vacancies in the occupation
-        vac_dict[occupation] = vacancies - filled_vacancies
-        # Update the applications list
-        app_dict[occupation] = applications
-    
+            # One more vacancy is filled
+            filled += 1
+
+        # Create a new list of vacancies based on how many were there in the begininng and how many were filled
+        # Note: vacs >= filled is always true because of loop above
+        if vacs > filled:
+            # Not all vacancies filled:
+            vac_dict[occupation] = [[]]*(vacs - filled)
+        else:
+            # All vacancies filled:
+            vac_dict[occupation] = []
+
     # Update the network node attributes
-    nx.set_node_attributes(G, app_dict, 'applications')
     nx.set_node_attributes(G, vac_dict, 'vacancies')
     nx.set_node_attributes(G, emp_dict, 'employed')
     nx.set_node_attributes(G, unemp_dict, 'unemployed')
@@ -244,19 +217,20 @@ def update_target_demand(G, demand_0, t, T, a):
     nx.set_node_attributes(G, target_demand, 'target_demand')
 
 
-def long_term_u(u, f_i, omega, k, t):
+def long_term_u(u, f_i, omega, k, t, i):
     '''
     Function that calculates the long term unemployment of each occupation
-    All input varaibles except k are vectors with length of the number of occupations
+    u and f_i should be timeseries
     '''
 
     if k == 0 and t == 0:
         return omega
     elif k == 0:
-        return long_term_u(u, f_i, omega, 0, t - 1)*(1 - f_i/u)
+        return long_term_u(u, f_i, omega, 0, t - 1, i)*(1 - f_i[t][i]/u[t][i])
     elif t == 0:
-        return long_term_u(u, f_i, omega, k, 0)*(1 - f_i/u)
-    return long_term_u(u, f_i, omega, k - 1, t - 1)*(1 - f_i/u)
+        return long_term_u(u, f_i, omega, k - 1, 0, i)*(1 - f_i[t][i]/u[t][i])
+    else:
+        return long_term_u(u, f_i, omega, k - 1, t - 1, i)*(1 - f_i[t][i]/u[t][i])
 
 
 def shock(G, demand_0, final_demand, t, t_0, k):
@@ -291,16 +265,11 @@ def calibration_calculation(empirical_data, model_data, A_e, period):
     empirical_data (dict): timeseries of vacancies and unemployment
     model_data (dict): timeseries of vacancies and unemployment
     '''
-
     start = round(period*2)
-    end = -1
 
     m_vacancies = [sum(model_data['vacancies'][i].values()) for i in range(len(model_data['vacancies']))]
     m_employed = [sum(model_data['employment'][i].values()) for i in range(len(model_data['employment']))]
-
-
     m_vac_rate = [m_vacancies[i]*100/(m_vacancies[i] + e) for i, e in enumerate(m_employed)]
-
     m_unemployed = [sum(model_data['unemployment'][i].values()) for i in range(len(model_data['unemployment']))]
     m_unemployed = [u*100/(m_employed[i]+ u) for i, u in enumerate(m_unemployed)]
 
@@ -325,9 +294,8 @@ def calibration_calculation(empirical_data, model_data, A_e, period):
 
     u_ss = m_unemployed[-1]
     vac_ss = m_vac_rate[-1]
-
-    m_vac_rate = m_vac_rate[start:end]
-    m_unemployed = m_unemployed[start:end]
+    m_vac_rate = m_vac_rate[start:]
+    m_unemployed = m_unemployed[start:]
 
     vac_max = np.max(m_vac_rate)
     vac_min = np.min(m_vac_rate)
@@ -373,7 +341,8 @@ def calibration_calculation(empirical_data, model_data, A_e, period):
     return cal_output
 
 
-def simulation(G, years, timestep, delta_u, gamma_u, delta_nu, gamma_ny, empirical_data, t_0, k, avg_hours_0, a, T, shock_start, attributes, calibration_output = False):
+def simulation(G, delta_u, delta_nu, gamma_u, gamma_nu, timestep, period, shock_period, 
+                k, avg_hours_0, t_0, attributes, long_term = False, complete_network = False):
     '''
     Set attribute data of occupational mobility netowrk and carry out the simulation for a specified number of timesteps
 
@@ -389,204 +358,296 @@ def simulation(G, years, timestep, delta_u, gamma_u, delta_nu, gamma_ny, empiric
     gamma_ny (float): speed of vacancy adjustment towards target demand
     '''
 
-    #set_attributes(G, data)
-    # This needs to be put into the network (used as starting point)
-    time_0 = dt.datetime.now()
+    if complete_network == True:
+        G = nx.complete_graph(G)
+        edges = G.edges()
+        weights = {edge: 1/len(G) for edge in edges}
+        nx.set_edge_attributes(G, weights, 'weight')
+
     for key, value in attributes.items():
         nx.set_node_attributes(G, value, str(key))
+    
+    pre_steps = int(period*52/timestep) # Steps before the automation shock
+    shock_steps = int(shock_period*52/timestep) # Steps during the automation shock
+    post_steps = int(period*52/timestep) # Steps after the automation shock
 
-    timesteps = round(years*52/timestep)
-    T_steps = round(T*52/timestep)
-
-    vacancies = nx.get_node_attributes(G, 'vacancies')
-    employed = nx.get_node_attributes(G, 'employed')
-
-    demand_0 = {}
-
-    for key in vacancies.keys():
-        demand_0[key] = vacancies[key] + employed[key] 
+    timesteps = pre_steps + shock_steps + post_steps
+    shock_mid = int(t_0*52/timestep) + pre_steps
 
     vac_data = []
     emp_data = []
     unemp_data = []
+    td_data = []
+    if long_term == True:
+        lt_unemp_data = []
+        f_i_data = []
 
-    # Variables to calculate the post shock demand
-    risk_factor = nx.get_node_attributes(G, 'comp_prob')
-    # Need more data for average hours worked in a year
+    # Data used to calculate the post shock demand
+    comp_prob = nx.get_node_attributes(G, 'comp_prob')
     average_hours_worked_0 = avg_hours_0
-    
-    # Empirical data
-    e_vac_rate = empirical_data['sa_vac_rate']
-    e_unemployed = empirical_data['u_trend']
-    e_seq = [(u, e_vac_rate.iloc[i]) for i, u in enumerate(e_unemployed)]
-    A_e = Polygon(e_seq)
 
-    final_hours_worked = {}
+    vacancies = nx.get_node_attributes(G, 'vacancies')
+    employed = nx.get_node_attributes(G, 'employed')
 
-    for occupation in risk_factor.keys():
-        final_hours_worked[occupation] = average_hours_worked_0*employed[occupation]*(1-risk_factor[occupation])
+    # e_0 = {key:val for key, val in employed.items()}
+    demand_0 = {occ:len(vacancies[occ]) + employed[occ] for occ in vacancies.keys()} 
 
-    # L should be the workforce at steady state (employed + unemployed) and should be calculated in the loop
-    L = sum(employed.values())
-
+    # Calculate the post shock demand for each occupation
+    L = sum(demand_0.values())
+    final_hours_worked = {occ : average_hours_worked_0*employed[occ]*(1-prob) for occ, prob in comp_prob.items()}
     final_average_hours_worked = sum(final_hours_worked.values())/L
 
     # Post shock demand
-    final_demand = {occupation:hours/final_average_hours_worked for occupation, hours in final_hours_worked.items()}
+    final_demand = {occupation: round(hours/final_average_hours_worked) for occupation, hours in final_hours_worked.items()}
+
+    # Print when the simulation starts
+    time = dt.datetime.now()
+    print('Simulation started at: ', time)
 
     for t in range(timesteps):
+        # Conduct the simulation steps:
+        # First, accept applications from previous timestep
         handle_applications(G)
+
+        # Then, let the (unemployed) workers that were not accepted or did not apply last timestep, apply to vacancies
         make_applications(G)
-        make_vacancies(G, delta_nu, gamma_ny)
+
+        # Create new vacancies that may be applied for in the next timestep
+        make_vacancies(G, delta_nu, gamma_nu)
+
+        # Separate workers that may apply in the next timestep
         separate_workers(G, delta_u, gamma_u)
 
-        # order should be checked and changed
-        # if t > shock_start:
-        #    shock(G, demand_0, final_demand, t, t_0, k)
-
-        vac_data.append(nx.get_node_attributes(G, 'vacancies'))
+        # Save the data
+        # For vacancies we are interested in the number of open vacancies - not the list of lists
+        vac_total = {key:len(val) for key, val in nx.get_node_attributes(G, 'vacancies').items()}
+        vac_data.append(vac_total)
         unemp_data.append(nx.get_node_attributes(G, 'unemployed'))
         emp_data.append(nx.get_node_attributes(G, 'employed'))
+        td_data.append(nx.get_node_attributes(G, 'target_demand'))
 
-        update_target_demand(G, demand_0, t, T_steps, a)
-    
+        # Calculate long-term unemployment
+        if long_term == True:
+            new_lt_u = {}
+            new_f_i = {}
+            lt_unemp_data.append(new_lt_u)
+            f_i_data.append(new_f_i)
+        
+        # Implement automation shock
+        if pre_steps < t and t < shock_steps + pre_steps:
+            shock(G, demand_0, final_demand, t*timestep/52, shock_mid*timestep/52, k)
 
-    model_data = {'vacancies': vac_data, 'unemployment': unemp_data, 'employment':emp_data}
-    cost = calibration_calculation(empirical_data, model_data, A_e, t_0)
 
+    # Ready the data for output
     vac_data = pd.DataFrame(vac_data)
     unemp_data = pd.DataFrame(unemp_data)
     emp_data = pd.DataFrame(emp_data)
+    td_data = pd.DataFrame(td_data)
 
-    if calibration_output == True:
-        return cost
+    # The simulation is completed
+    time = dt.datetime.now() - time
+    print('Simulation took: ', time)
+    if long_term == True:
+        return {'vacancy_data': vac_data, 'unemployment_data': unemp_data, 'employment_data': emp_data, 'target_demand_data': td_data, 'lt_unemp_data': lt_unemp_data}
     else:
-        return {'vacancy_data': vac_data, 'unemployment_data': unemp_data, 'employment_data': emp_data, 'cost': cost}
+        return {'vacancy_data': vac_data, 'unemployment_data': unemp_data, 'employment_data': emp_data, 'target_demand_data': td_data}
 
-def deterministic_simulation(G, years, timestep, delta_u, gamma_u, delta_nu, gamma_ny, empirical_data, t_0, k, L, avg_hours_0, a, T, shock_start, attributes, calibration_output = False):
-    #set_attributes(G, data)
-    # This needs to be put into the network (used as starting point)
+def deterministic_simulation(G, delta_u, delta_nu, gamma_u, gamma_nu, timestep, period, shock_period, k, avg_hours_0, t_0, attributes, 
+long_term = False, complete_network = False, calibration = False, empirical_data = None, a = 0.03):
+
+    if calibration == True and empirical_data == None:
+        print('EEROR: Empirical data must be input for calibration run')
+        return
+    if long_term == calibration == True:
+        print('ERROR: Should not calculate long term unemployment during a calibration run')
+        return
+    if complete_network == calibration == True:
+        print('ERROR: Should not use complete network during calibration run')
+        return
+    
+    if complete_network == True:
+        G = nx.complete_graph(G)
+        edges = G.edges()
+        weights = {edge: 1/len(G) for edge in edges}
+        nx.set_edge_attributes(G, weights, 'weight')
 
     for key, value in attributes.items():
         nx.set_node_attributes(G, value, str(key))
 
-    timesteps = round(T*52/timestep)*3
-    T_steps = round(T*52/timestep)
-    t_0 = round(t_0/timestep)
+    # Translate period (in years) into timesteps where timestep is the number of weeks between steps
+    pre_steps = int(period*52/timestep) # Steps before the automation shock
+    shock_steps = int(shock_period*52/timestep) # Steps during the automation shock
+    post_steps = int(period*52/timestep) # Steps after the automation shock
+    timesteps = pre_steps + shock_steps + post_steps
 
+    # This is the midpoint of the demand shock
+    shock_mid = int(t_0*52/timestep) + pre_steps
+
+    # Calculate intial demand
     vacancies = nx.get_node_attributes(G, 'vacancies')
     employed = nx.get_node_attributes(G, 'employed')
 
-    demand_0 = {}
+    e_0 = {key:val for key, val in employed.items()}
 
-    for key in vacancies.keys():
-        demand_0[key] = vacancies[key] + employed[key] 
+    demand_0 = {occ:vacancies[occ] + employed[occ] for occ in vacancies.keys()} 
 
     vac_data = []
     emp_data = []
     unemp_data = []
+    td_data = []
+    if long_term == True:
+        lt_unemp_data = []
+        f_i_data = []
 
-    # Variables to calculate the post shock demand
-    risk_factor = nx.get_node_attributes(G, 'comp_prob')
+    # Data to calculate the post shock demand
+    comp_prob = nx.get_node_attributes(G, 'comp_prob')
     average_hours_worked_0 = avg_hours_0
-    
 
-    final_hours_worked = {}
-
-    for occupation in risk_factor.keys():
-        final_hours_worked[occupation] = average_hours_worked_0*employed[occupation]*(1-risk_factor[occupation])
-
+    # Calculate post shock demand
+    L = sum(demand_0.values())
+    final_hours_worked = {occ : average_hours_worked_0*employed[occ]*(1-prob) for occ, prob in comp_prob.items()}
     final_average_hours_worked = sum(final_hours_worked.values())/L
-
     # Post shock demand
-    final_demand = {occupation:hours/final_average_hours_worked for occupation, hours in final_hours_worked.items()}
+    final_demand = {occupation: round(hours/final_average_hours_worked) for occupation, hours in final_hours_worked.items()}
 
-
-
-    occupations = list(G.nodes())
+    occupations = G.nodes()
     time = dt.datetime.now()
+
+    # The occupational mobility network does not change and may be set here
+    A = nx.get_edge_attributes(G, 'weight')
+    # The beginning of the simulation
     print('Simulation started at: ', time)
     for t in range(timesteps):
-        ny = nx.get_node_attributes(G, 'vacancies')
+        # Initial values from previous timesteps
+        nu = nx.get_node_attributes(G, 'vacancies')
         u = nx.get_node_attributes(G, 'unemployed')
         e = nx.get_node_attributes(G, 'employed')
-        A = nx.get_edge_attributes(G, 'weight')
 
+        if long_term == True:
+            lt_u = nx.get_node_attributes(G, 'lt_unemployed')
+
+        # s is the expected number of applicants to an occupation, j
         s = {}
+        # f is the expected flow to and from an occupation, j
         f = {}
         for j in occupations:
+            # Begin by calculating expected applicants since this determines flow
             s[j] = []
+            # Loop over the occupations that have an edge to j
             for i in G.predecessors(j):
-                ny_A_sum = sum([ny[k]*A[(i,k)] for k in G.neighbors(i)])
-                if ny_A_sum == 0:
+                # Workers in each of these occupations may apply to any occupation which they have an edge to (weighted by edge weight)
+                nu_A_sum = np.sum([nu[k]*A[(i,k)] for k in G.neighbors(i)])
+                # Workers may only apply to occupations in which there are vacancies
+                if nu_A_sum == 0:
                     s[j].append(0)
                 else:
-                    s[j].append(u[i]*ny[j]*A[(i,j)]/ny_A_sum)
+                    s[j].append(u[i]*nu[j]*A[(i,j)]/nu_A_sum)
 
+            # Sum over the expected applicants from all occupations that have an edge to j
             s[j] = sum(s[j])
+            # Calculate the expected flow of workers from i to j
             for i in G.predecessors(j):
-                ny_A_sum = sum([ny[k]*A[(i,k)] for k in G.neighbors(i)])
-                if s[j]*ny_A_sum == 0:
+                # This is done via the expression arrived at by Taylor expansion
+                nu_A_sum = np.sum([nu[k]*A[(i,k)] for k in G.neighbors(i)])
+                if s[j]*nu_A_sum == 0:
                     f[(i,j)] = 0
                 else:
-                    f[(i,j)] = u[i]*(ny[j]**(2))*A[(i,j)]*(1 - math.exp(-s[j]/ny[j]))/(s[j]*ny_A_sum)
+                    f[(i,j)] = u[i]*(nu[j]**(2))*A[(i,j)]*(1 - math.exp(-s[j]/nu[j]))/(s[j]*nu_A_sum)
 
         new_e = {}
         new_u = {}
-        new_ny = {}
+        new_nu = {}
+        if long_term == True:
+            new_f_i = {}
+            new_lt_u = {}
         
         target_demand = nx.get_node_attributes(G, 'target_demand')
         current_demand = {}
-
         for i in occupations:
-            current_demand[i] = ny[i] + e[i]
-            demand_diff = max(0, current_demand[i] - target_demand[i])
+            # Set the current demand of the occupation
+            current_demand[i] = nu[i] + e[i]
+            demand_diff = round(np.max([0, current_demand[i] - target_demand[i]]))
 
-            f_i = sum([f[(j,i)] for j in G.predecessors(i)])
+            # Calculate the inflow of employees to the occupation 
+            f_i = round(np.sum([f[(j,i)] for j in G.predecessors(i)]))
+            # saved since timeseries is required to calculate long term unemployed
+            if long_term == True:
+                new_f_i[i] = f_i
 
-            new_e[i] = e[i] - delta_u*e[i] - (1 - delta_u)*gamma_u*demand_diff + f_i
+            # Calculate new amount of employees
+            new_e[i] = round(e[i] - delta_u*e[i] - (1 - delta_u)*gamma_u*demand_diff + f_i)
 
-            f_j = sum([f[(i,j)] for j in G.successors(i)])
+            # Calculate outflow of unemployed workers
+            f_j = round(np.sum([f[(i,j)] for j in G.successors(i)]))
 
-            new_u[i] = u[i] + delta_u*e[i] + (1 - delta_u)*gamma_u*demand_diff - f_j
+            # Calculate new amount of unemployed workers
+            new_u[i] = round(u[i] + delta_u*e[i] + (1 - delta_u)*gamma_u*demand_diff - f_j)
 
-            demand_diff = max(0, target_demand[i]-current_demand[i])
+            # Used to calculate long term unemployment (time-consuming)
+            if long_term == True:
+                omega = e_0[i] * (delta_u + (1 - delta_u)*gamma_u*demand_diff)/e[i]
+                 # Calculate long term unemployment
+                if t == 0:
+                    continue
+                k = int(27/timestep) # maybe modify to Sweden's definition
 
-            new_ny[i] = ny[i] + delta_nu*e[i] + (1-delta_nu)*gamma_u*demand_diff - f_i
+                temp_sum = 0
+                while k <= t:
+                    lt_u_k = long_term_u(unemp_data, f_i_data, omega, k, t-1, i)
+                    k +=1
+                    temp_sum += lt_u_k
+                new_lt_u[i] = temp_sum
 
-        nx.set_node_attributes(G, new_ny, 'vacancies')
+            # Calculate new vacancies
+            demand_diff = round(np.max([0, target_demand[i]-current_demand[i]]))
+            new_nu[i] = round(nu[i] + delta_nu*e[i] + (1-delta_nu)*gamma_nu*demand_diff - f_i) 
+
+           
+        # Update network with new values
+        nx.set_node_attributes(G, new_nu, 'vacancies')
         nx.set_node_attributes(G, new_e, 'employed')
         nx.set_node_attributes(G, new_u, 'unemployed')
+        if long_term == True:
+            nx.set_node_attributes(G, new_lt_u, 'lt_unemployed')
+            nx.set_node_attributes(G, new_f_i, 'f_i')
 
-        vac_data.append(nx.get_node_attributes(G, 'vacancies'))
-        unemp_data.append(nx.get_node_attributes(G, 'unemployed'))
-        emp_data.append(nx.get_node_attributes(G, 'employed'))
+        # Save values for output
+        vac_data.append(new_nu)
+        unemp_data.append(new_e)
+        emp_data.append(new_u)
+        td_data.append(target_demand)
+        if long_term == True:
+            lt_unemp_data.append(new_lt_u)
+            f_i_data.append(new_f_i)
 
-        if T_steps < t:
-            update_target_demand(G, demand_0, t, T_steps, a)
+        # Implement automation shock
+        if calibration == False:
+            if pre_steps < t and t < shock_steps + pre_steps:
+                shock(G, demand_0, final_demand, t*timestep/52, shock_mid*timestep/52, k)
+        else:
+            if pre_steps < t:
+                update_target_demand(G, demand_0, t, pre_steps, a)
+    
+    if calibration == True:
+        model_data = {'vacancies': vac_data, 'unemployment': unemp_data, 'employment':emp_data}
 
-        # order should be checked and changed
-        # if t > shock_start:
-        #    shock(G, demand_0, final_demand, t, t_0, k)
+        # Empirical data
+        e_vac_rate = empirical_data['sa_vac_rate']
+        e_unemployed = empirical_data['u_trend']
+        e_seq = [(u, e_vac_rate.iloc[i]) for i, u in enumerate(e_unemployed)]
+        A_e = Polygon(e_seq).buffer(0)
+        cost = calibration_calculation(empirical_data, model_data, A_e, pre_steps)
+        cost['A_e'] = A_e.area
+        time = dt.datetime.now()- time
+        print('Simulation took: ', time)
 
-    model_data = {'vacancies': vac_data, 'unemployment': unemp_data, 'employment':emp_data}
-    # Empirical data
-    e_vac_rate = empirical_data['sa_vac_rate']
-    e_unemployed = empirical_data['u_trend']
-    e_seq = [(u, e_vac_rate.iloc[i]) for i, u in enumerate(e_unemployed)]#
-    A_e = Polygon(e_seq).buffer(0)
+        return cost
 
-    cost = calibration_calculation(empirical_data, model_data, A_e, t_0)
-    cost['A_e'] = A_e.area
-
-    vac_data = pd.DataFrame(vac_data)
-    unemp_data = pd.DataFrame(unemp_data)
-    emp_data = pd.DataFrame(emp_data)
+    
     time = dt.datetime.now()- time
     print('Simulation took: ', time)
-    cost['time'] = time
-    if calibration_output == True:
-        return cost
-    else:
-        return {'vacancy_data': vac_data, 'unemployment_data': unemp_data, 'employment_data': emp_data, 'cost': cost}
+    if long_term == True:
+        return {'vacancy_data': vac_data, 'unemployment_data': unemp_data, 'employment_data': emp_data, 'target_demand_data': td_data, 'lt_unemp_data': lt_unemp_data}
 
+    else:
+        return {'vacancy_data': vac_data, 'unemployment_data': unemp_data, 'employment_data': emp_data, 'target_demand_data': td_data}

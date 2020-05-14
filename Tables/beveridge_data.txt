@@ -1,0 +1,22 @@
+\begin{longtable}{lrr}
+\label{tab:bev_dat}\\
+\toprule
+{} & Unemployment rate & Vacancy rate \\
+\midrule
+\endhead
+\midrule
+\multicolumn{3}{r}{{Continued on next page}} \\
+\midrule
+\endfoot
+
+\bottomrule
+\endlastfoot
+\textbf{count} &         64.000000 &    64.000000 \\
+\textbf{mean } &          7.305937 &     1.437026 \\
+\textbf{std  } &          0.774180 &     0.505031 \\
+\textbf{min  } &          5.880000 &     0.637195 \\
+\textbf{25\%  } &          6.742500 &     1.056803 \\
+\textbf{50\%  } &          7.400000 &     1.331720 \\
+\textbf{75\%  } &          7.885000 &     1.888103 \\
+\textbf{max  } &          8.920000 &     2.342853 \\
+\end{longtable}

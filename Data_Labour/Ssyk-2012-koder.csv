@@ -1,163 +1,146 @@
-﻿SSYK 2012 kod;Benämning;;;;;
-111; Politiker och högre ämbetsmän;;;;;
-112; Verkställande direktörer m.fl.;;;;;
-121; Ekonomi- och finanschefer;;;;;
-122; Personal- och HR-chefer;;;;;
-123; Förvaltnings- och planeringschefer;;;;;
-124; Informations-, kommunikations- och PR-chefer;;;;;
-125; Försäljnings- och marknadschefer;;;;;
-129; Övriga administrations- och servicechefer;;;;;
-131; IT-chefer;;;;;
-132; Inköps-, logistik- och transportchefer;;;;;
-133; Forsknings- och utvecklingschefer;;;;;
-134; Chefer inom arkitekt- och ingenjörsverksamhet;;;;;
-135; Fastighets- och förvaltningschefer;;;;;
-136; Driftchefer inom bygg, anläggning och gruva;;;;;
-137; Produktionschefer inom tillverkning;;;;;
-138; Förvaltare inom skogsbruk och lantbruk m.fl.;;;;;
-141; Chefer inom grund- och gymnasieskola samt vuxenutbildning;;;;;
-142; Chefer inom förskoleverksamhet;;;;;
-149; Övriga chefer inom utbildning;;;;;
-151; Chefer inom hälso- och sjukvård;;;;;
-152; Chefer inom socialt och kurativt arbete;;;;;
-153; Chefer inom äldreomsorg;;;;;
-154; Chefer och ledare inom trossamfund;;;;;
-159; Övriga chefer inom samhällsservice;;;;;
-161; Chefer inom bank, finans och försäkring;;;;;
-171; Hotell- och konferenschefer;;;;;
-172; Restaurang- och kökschefer;;;;;
-173; Chefer inom handel;;;;;
-174; Chefer inom friskvård, sport och fritid;;;;;
-179; Chefer inom övrig servicenäring;;;;;
-211; Fysiker och kemister m.fl.;;;;;
-212; Matematiker, aktuarier och statistiker;;;;;
-213; Biologer, farmakologer och specialister inom lant- och skogsbruk m.fl.;;;;;
-214; Civilingenjörsyrken;;;;;
-216; Arkitekter och lantmätare;;;;;
-217; Designer och formgivare;;;;;
-218; Specialister inom miljö- och hälsoskydd;;;;;
-221; Läkare;;;;;
-222; Sjuksköterskor;;;;;
-223; Sjuksköterskor (fortsättning);;;;;
-224; Psykologer och psykoterapeuter;;;;;
-225; Veterinärer;;;;;
-226; Tandläkare;;;;;
-227; Naprapater, sjukgymnaster och arbetsterapeuter m.fl.;;;;;
-228; Andra specialister inom hälso- och sjukvård;;;;;
-231; Universitets- och högskollärare;;;;;
-232; Lärare i yrkesämnen;;;;;
-233; Gymnasielärare;;;;;
-234; Grundskollärare, fritidspedagoger och förskollärare;;;;;
-235; Andra pedagoger med teoretisk specialistkompetens;;;;;
-241; Revisorer, finansanalytiker och fondförvaltare m.fl.;;;;;
-242; Organisationsutvecklare, utredare och HR-specialister m.fl.;;;;;
-243; Marknadsförare och informatörer m.fl.;;;;;
-251; IT-arkitekter, systemutvecklare och testledare m.fl.;;;;;
-261; Jurister;;;;;
-262; Museiintendenter och bibliotekarier m.fl.;;;;;
-264; Författare, journalister och tolkar m.fl.;;;;;
-265; Konstnärer, musiker och skådespelare m.fl.;;;;;
-266; Socialsekreterare och kuratorer m.fl.;;;;;
-267; Präster och diakoner;;;;;
-311; Ingenjörer och tekniker;;;;;
-312; Arbetsledare inom bygg och tillverkning m.m.;;;;;
-315; Piloter, fartygs- och maskinbefäl m.fl.;;;;;
-321; Biomedicinska analytiker, tandtekniker och laboratorieingenjörer m.fl.;;;;;
-323; Terapeuter inom alternativmedicin;;;;;
-324; Djursjukskötare m.fl.;;;;;
-325; Tandhygienister;;;;;
-331; Banktjänstemän och redovisningsekonomer m.fl.;;;;;
-332; Försäkringsrådgivare, företagssäljare och inköpare m.fl.;;;;;
-333; Förmedlare m.fl.;;;;;
-334; Juristsekreterare, chefssekreterare och institutionssekreterare m.fl.;;;;;
-335; Skatte- och socialförsäkringshandläggare m.fl.;;;;;
-336; Poliser;;;;;
-341;Behandlingsassistenter och pastorer;;;;;
-342; Idrottsutövare och fritidsledare m.fl.;;;;;
-343; Fotografer, dekoratörer och underhållningsartister m.fl.;;;;;
-344; Trafiklärare och instruktörer;;;;;
-345; Köksmästare och souschefer;;;;;
-351; Drift-, support- och nätverkstekniker m.fl.;;;;;
-352; Bild-, ljud- och ljustekniker m.fl.;;;;;
-411; Kontorsassistenter och sekreterare;;;;;
-421; Croupierer och inkasserare;;;;;
-422; Resesäljare, kundtjänstpersonal och receptionister m.fl.;;;;;
-432; Lagerpersonal och transportledare m.fl.;;;;;
-441;Biblioteks- och arkivassistenter m.fl.;;;;;
-442; Brevbärare och postterminalarbetare;;;;;
-443; Förtroendevalda;;;;;
-511; Kabinpersonal, tågmästare och guider m.fl.;;;;;
-512; Kockar och kallskänkor;;;;;
-513; Hovmästare, servitörer och bartendrar;;;;;
-514; Skönhets- och kroppsterapeuter;;;;;
-515; Städledare och fastighetsskötare m.fl.;;;;;
-516; Övrig servicepersonal;;;;;
-522; Butikspersonal;;;;;
-523; Kassapersonal m.fl.;;;;;
-524; Eventsäljare och telefonförsäljare m.fl.;;;;;
-531; Barnskötare och elevassistenter m.fl.;;;;;
-532; Undersköterskor;;;;;
-533; Vårdbiträden;;;;;
-534; Skötare, vårdare och personliga assistenter m.fl.;;;;;
-535; Tandsköterskor;;;;;
-541; Andra bevaknings- och säkerhetsyrken;;;;;
-611; Växtodlare inom jordbruk och trädgård;;;;;
-612; Djuruppfödare och djurskötare;;;;;
-613; Växtodlare och djuruppfödare, blandad drift;;;;;
-621; Skogsarbetare;;;;;
-622; Fiskodlare och fiskare;;;;;
-711; Snickare, murare och anläggningsarbetare;;;;;
-712; Takmontörer, golvläggare och VVS-montörer m.fl.;;;;;
-713; Målare, lackerare och skorstensfejare m.fl.;;;;;
-721; Gjutare, svetsare och plåtslagare m.fl.;;;;;
-722; Smeder och verktygsmakare m.fl.;;;;;
-723; Fordonsmekaniker och reparatörer m.fl.;;;;;
-731; Finmekaniker och konsthantverkare m.fl.;;;;;
-732; Prepresstekniker, tryckare och bokbindare m.fl.;;;;;
-741; Installations- och industrielektriker m.fl.;;;;;
-742; Elektronikreparatörer och kommunikationselektriker m.fl.;;;;;
-752; Ytbehandlare, trä och möbelsnickare m.fl.;;;;;
-753; Skräddare, tapetserare och läderhantverkare m.fl.;;;;;
-761; Slaktare, bagare och livsmedelsförädlare m.fl.;;;;;
-811; Malmförädlingsyrken och brunnsborrare m.fl.;;;;;
-812; Process- och maskinoperatörer, vid stål- och metallverk;;;;;
-813; Maskinoperatörer, kemiska och farmaceutiska produkter m.m.;;;;;
-814; Maskinoperatörer, gummi-, plast- och pappersvaruindustri;;;;;
-815; Maskinoperatörer, textil-, tvätt- och läderindustri m.m.;;;;;
-816; Maskinoperatörer, livsmedelsindustri;;;;;
-817; Processoperatörer, trä- och pappersindustri;;;;;
-818; Andra process- och maskinoperatörer;;;;;
-819; Drifttekniker och processövervakare;;;;;
-821; Montörer;;;;;
-831; Lokförare och bangårdspersonal;;;;;
-832; Bil-, motorcykel och cykelförare;;;;;
-833; Lastbils- och bussförare;;;;;
-834; Maskinförare;;;;;
-835; Matroser och jungmän m.fl.;;;;;
-911; Städare och hemservicepersonal m.fl.;;;;;
-912; Tvättare, fönsterputsare och övriga rengöringsarbetare;;;;;
-921; Bärplockare och plantörer m.fl.;;;;;
-931; Grovarbetare inom bygg och anläggning;;;;;
-932; Handpaketerare och andra fabriksarbetare;;;;;
-933; Hamnarbetare och ramppersonal m.fl.;;;;;
-941; Snabbmatspersonal, köks- och restaurangbiträden m.fl.;;;;;
-952; Torg- och marknadsförsäljare;;;;;
-961; Återvinningsarbetare;;;;;
-962; Tidningsdistributörer, vaktmästare och övriga servicearbetare;;;;;
-011; Officerare;;;;;
-021; Specialistofficerare;;;;;
-031; Soldater m.fl.;;;;;
-;;;;;;
-;;;;;;
-;;;;;;
-;;;;;;
-;;;;;;
-;;;;;;
-;;;;;;
-;;;;;;
-;;;;;;
-;;;;;;
-;;;;;;
-;;;;;;
-;;;;;;
-;;;;;;
+﻿ssyk3;swedish;english
+111;Politiker och högre ämbetsmän;Politicians and higher officials
+112;Verkställande direktörer m.fl.;Assorted Chief Officers
+121;Ekonomi- och finanschefer;Chief Financial Officers
+122;Personal- och HR-chefer;Personell and HR officers
+123;Förvaltnings- och planeringschefer;Administration and planning managers
+124;Informations-, kommunikations- och PR-chefer;Information, communication and PR managers
+125;Försäljnings- och marknadschefer;Sales and marketing managers
+129;Övriga administrations- och servicechefer;Other administration and service managers
+131;IT-chefer;Information technology managers
+132;Inköps-, logistik- och transportchefer;Purchasing, logistics and transport managers
+133;Forsknings- och utvecklingschefer;R&D managers
+134;Chefer inom arkitekt- och ingenjörsverksamhet;Architecture and engineering managers
+135;Fastighets- och förvaltningschefer;Real estate and administration managers
+136;Driftchefer inom bygg, anläggning och gruva;Construction, plant and mine operational managers
+137;Produktionschefer inom tillverkning;Production and manufacturing managers
+138;Förvaltare inom skogsbruk och lantbruk m.fl.;Forestry and agriculture managers
+141;Chefer inom grund- och gymnasieskola samt vuxenutbildning;Managers in elementary, high-school and adult education
+142;Chefer inom förskoleverksamhet;Managers in preschool activities
+149;Övriga chefer inom utbildning;Other managers within education
+151;Chefer inom hälso- och sjukvård;Healthcare managers''
+152;Chefer inom socialt och kurativt arbete;Managers of social and curative work
+153;Chefer inom äldreomsorg;Managers within elederly care
+154;Chefer och ledare inom trossamfund;Managers and leaders of faith communities
+159;Övriga chefer inom samhällsservice;Other managers within societal services
+161;Chefer inom bank, finans och försäkring;Managers in banking, finance and insurance
+171;Hotell- och konferenschefer;Hotel and conference managers
+172;Restaurang- och kökschefer;Restaurant and kitchen managers
+173;Chefer inom handel;Managers within trade
+174;Chefer inom friskvård, sport och fritid;Managers within wellnes, sport and leisure
+179;Chefer inom övrig servicenäring;Other service managers
+211;Fysiker och kemister m.fl.;Physicists, chemists and similar
+212;Matematiker, aktuarier och statistiker;Mathematicians, actuaries and statisticians
+213;Biologer, farmakologer och specialister inom lant- och skogsbruk m.fl.;Biologists, pharmacologists and specialists within agriculture and forestry
+214;Civilingenjörsyrken;Advanced engineering occupations
+216;Arkitekter och lantmätare;Architects and surveyors
+217;Designer och formgivare;Designers
+218;Specialister inom miljö- och hälsoskydd;Specialists within environmental- and health protection
+221;Läkare;Medical Doctors
+222;Sjuksköterskor;Nurses
+223;Sjuksköterskor (fortsättning);Other nurses
+224;Psykologer och psykoterapeuter;Psychologists and psychotherapists
+225;Veterinärer;Veterinarians
+226;Tandläkare;Dentists
+227;Naprapater, sjukgymnaster och arbetsterapeuter m.fl.;Naprapaths, physiotherapists, occupational therapists and other
+228;Andra specialister inom hälso- och sjukvård;Other specialists within healthcare
+231;Universitets- och högskollärare;Teachers in higher education
+232;Lärare i yrkesämnen;Teacher in occupational subjects
+233;Gymnasielärare;High school teacher
+234;Grundskollärare, fritidspedagoger och förskollärare;Teachers at elementary and pre-school level
+235;Andra pedagoger med teoretisk specialistkompetens;Other teachers with theoretical, special competence
+241;Revisorer, finansanalytiker och fondförvaltare m.fl.;Accountants, financial analysts and fund managers
+242;Organisationsutvecklare, utredare och HR-specialister m.fl.;Organisational developers and HR-specialists
+243;Marknadsförare och informatörer m.fl.;Marketing and public relations
+251;IT-arkitekter, systemutvecklare och testledare m.fl.;IT-architects, systemdevelopes and others
+261;Jurister;Lawyers
+262;Museiintendenter och bibliotekarier m.fl.;Museum superintendents and librarians
+264;Författare, journalister och tolkar m.fl.;Authors, journalists and translators
+265;Konstnärer, musiker och skådespelare m.fl.;Artists, musicians and actors
+266;Socialsekreterare och kuratorer m.fl.;Social secretaries and curators
+267;Präster och diakoner;Priests and deacons
+311;Ingenjörer och tekniker;Engineers and technicians
+312;Arbetsledare inom bygg och tillverkning m.m.;Construction and manufacturing supervisors
+315;Piloter, fartygs- och maskinbefäl m.fl.;Pilots, ship and machine officers
+321;Biomedicinska analytiker, tandtekniker och laboratorieingenjörer m.fl.;Biomedical analysts, dental technicians and labratory engineers
+323;Terapeuter inom alternativmedicin;Therapists in alternative medicine
+324;Djursjukskötare m.fl.;Animal nurses and others
+325;Tandhygienister;Dental hygienists
+331;Banktjänstemän och redovisningsekonomer m.fl.;Bankers and accountants
+332;Försäkringsrådgivare, företagssäljare och inköpare m.fl.;Insurance advisors, business sales and purchasing 
+333;Förmedlare m.fl.;Intermediares and others
+334;Juristsekreterare, chefssekreterare och institutionssekreterare m.fl.;Legal secretary, chief secretary and department secretary
+335;Skatte- och socialförsäkringshandläggare m.fl.;Tax and social security officers
+336;Poliser;Police officers
+341;Behandlingsassistenter och pastorer;Treatment assitants and pastors
+342;Idrottsutövare och fritidsledare m.fl.;Athletes and leisure coaches
+343;Fotografer, dekoratörer och underhållningsartister m.fl.;Photographers, decorators and entertainment artists
+344;Trafiklärare och instruktörer;Trafic teachers and instructors
+345;Köksmästare och souschefer;Chefs and sous chefs
+351;Drift-, support- och nätverkstekniker m.fl.;Operation, support and network technicians
+352;Bild-, ljud- och ljustekniker m.fl.;Image, sound and lighting technicians
+411;Kontorsassistenter och sekreterare;Office assistants and secretaries
+421;Croupierer och inkasserare;Croupiers and debt collectors
+422;Resesäljare, kundtjänstpersonal och receptionister m.fl.;Travel agents, customer service personell and receptionists
+432;Lagerpersonal och transportledare m.fl.;Warehouse workers and transport managers
+441;Biblioteks- och arkivassistenter m.fl.;Library and Archive Assistants
+442;Brevbärare och postterminalarbetare;Mail and post workers
+443;Förtroendevalda;Elected official
+511;Kabinpersonal, tågmästare och guider m.fl.;Cabin crew, train personell and guides
+512;Kockar och kallskänkor;Cooks and cold bar attendants
+513;Hovmästare, servitörer och bartendrar;Head waitors, waitors and bartenders
+514;Skönhets- och kroppsterapeuter;Beauty and body therapists
+515;Städledare och fastighetsskötare m.fl.;Cleaning managers and property managers
+516;Övrig servicepersonal;Other servicepersonell
+522;Butikspersonal;Shop staff
+523;Kassapersonal m.fl.;Cashiers and others
+524;Eventsäljare och telefonförsäljare m.fl.;Event sales and telemarketing
+531;Barnskötare och elevassistenter m.fl.;Childcare and student assistants
+532;Undersköterskor;Assistant nurses
+533;Vårdbiträden;Nursing assistants
+534;Skötare, vårdare och personliga assistenter m.fl.;Caretakers, carers and personal assistants
+535;Tandsköterskor;Dental nurses
+541;Andra bevaknings- och säkerhetsyrken;Other security proffessions
+611;Växtodlare inom jordbruk och trädgård;Plant growers in agriculture and gardening
+612;Djuruppfödare och djurskötare;Animal breeders and caretakers
+613;Växtodlare och djuruppfödare, blandad drift;Plant breeders and animal breeders, mixed operation
+621;Skogsarbetare;Forestry workers
+622;Fiskodlare och fiskare;Fishery workers and fishers
+711;Snickare, murare och anläggningsarbetare;Carpenter, mason and construction workers
+712;Takmontörer, golvläggare och VVS-montörer m.fl.;Ceiling fittings, flooring and plumbing workers
+713;Målare, lackerare och skorstensfejare m.fl.;Painters, lacquers and chimney sweeps
+721;Gjutare, svetsare och plåtslagare m.fl.;Casters, welders and sheet metal blowers
+722;Smeder och verktygsmakare m.fl.;Blacksmiths and toolmakers
+723;Fordonsmekaniker och reparatörer m.fl.;Vehicle mechanics and repairers
+731;Finmekaniker och konsthantverkare m.fl.;Fine mechanics and craftsmen
+732;Prepresstekniker, tryckare och bokbindare m.fl.;Prepress technicians, printers and bookbinders
+741;Installations- och industrielektriker m.fl.;Installation and industrial electricians
+742;Elektronikreparatörer och kommunikationselektriker m.fl.;Electronics repairers and communication electricians
+752;Ytbehandlare, trä och möbelsnickare m.fl.;Surface finishers, wood and furniture carpenters
+753;Skräddare, tapetserare och läderhantverkare m.fl.;Tailors, wallpapers and leather craftsmen
+761;Slaktare, bagare och livsmedelsförädlare m.fl.;Butchers, bakers and food processors
+811;Malmförädlingsyrken och brunnsborrare m.fl.;The ore processing profession and well drillers
+812;Process- och maskinoperatörer, vid stål- och metallverk;Process and machine operators, at steel and metal plants
+813;Maskinoperatörer, kemiska och farmaceutiska produkter m.m.;Machine operators, chemical and pharmaceutical products
+814;Maskinoperatörer, gummi-, plast- och pappersvaruindustri;Machine operators, rubber, plastic and stationery industry
+815;Maskinoperatörer, textil-, tvätt- och läderindustri m.m.;Machine operators, textile, laundry and leather industry
+816;Maskinoperatörer, livsmedelsindustri;Machine operators, food industry
+817;Processoperatörer, trä- och pappersindustri;Process operators, wood and paper industry
+818;Andra process- och maskinoperatörer;Other process and machine operators
+819;Drifttekniker och processövervakare;Operating technicians and process supervisors
+821;Montörer;Installers
+831;Lokförare och bangårdspersonal;Locomotive driver and yard staff
+832;Bil-, motorcykel och cykelförare;Car, motorcycle and bicycle driver
+833;Lastbils- och bussförare;Truck and bus driver
+834;Maskinförare;Machine drivers
+835;Matroser och jungmän m.fl.;Sailors and deckhands
+911;Städare och hemservicepersonal m.fl.;Cleaners and home service staff
+912;Tvättare, fönsterputsare och övriga rengöringsarbetare;Washers, window cleaners and other cleaning workers
+921;Bärplockare och plantörer m.fl.;Berry pickers and planters
+931;Grovarbetare inom bygg och anläggning;Rough workers in construction and civil engineering
+932;Handpaketerare och andra fabriksarbetare;Hand packers and other factory workers
+933;Hamnarbetare och ramppersonal m.fl.;Harbor workers and ramp staff
+941;Snabbmatspersonal, köks- och restaurangbiträden m.fl.;Fast food staff, kitchen and restaurant assistants
+952;Torg- och marknadsförsäljare;Square and market vendors
+961;Återvinningsarbetare;Recycling workers
+962;Tidningsdistributörer, vaktmästare och övriga servicearbetare;Newspaper distributors, custodians and other service workers
