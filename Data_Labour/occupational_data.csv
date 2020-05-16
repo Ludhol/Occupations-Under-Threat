@@ -1,146 +1,146 @@
 ssyk3,Computerisation Probability,swedish,english,2014,2015,2016,2017,2018,post-shock demand
-111,0.1,Politiker och högre ämbetsmän,Politicians and higher officials,3876,3676,3889,3921,3028,4813
-112,0.09,Verkställande direktörer m.fl.,Assorted Chief Officers,22860,23000,24598,22676,21895,35195
-121,0.07,Ekonomi- och finanschefer,Chief Financial Officers,16630,16615,16864,18056,18302,30066
-122,0.32,Personal- och HR-chefer,Personell and HR officers,7684,7493,7876,8280,8876,10661
-123,0.42,Förvaltnings- och planeringschefer,Administration and planning managers,10208,10282,10816,11482,10864,11130
-124,0.13,"Informations-, kommunikations- och PR-chefer","Information, communication and PR managers",3319,3389,3789,4126,4418,6789
-125,0.12,Försäljnings- och marknadschefer,Sales and marketing managers,30741,31097,29866,31489,32321,50241
-129,0.3,Övriga administrations- och servicechefer,Other administration and service managers,19059,19354,20973,21995,24002,29678
-131,0.04,IT-chefer,Information technology managers,11758,12044,10801,11283,11522,19538
-132,0.53,"Inköps-, logistik- och transportchefer","Purchasing, logistics and transport managers",10087,10502,10954,11278,11454,9509
-133,0.02,Forsknings- och utvecklingschefer,R&D managers,4999,5490,6232,6378,6334,10964
-134,0.25,Chefer inom arkitekt- och ingenjörsverksamhet,Architecture and engineering managers,8423,8953,9858,10710,11584,15346
-135,0.35,Fastighets- och förvaltningschefer,Real estate and administration managers,2863,3062,3742,3928,4026,4622
-136,0.16,"Driftchefer inom bygg, anläggning och gruva","Construction, plant and mine operational managers",15933,16258,17035,18548,18401,27303
-137,0.03,Produktionschefer inom tillverkning,Production and manufacturing managers,14998,15836,16575,16651,17013,29150
-138,0.68,Förvaltare inom skogsbruk och lantbruk m.fl.,Forestry and agriculture managers,514,553,607,643,758,428
-141,0.01,Chefer inom grund- och gymnasieskola samt vuxenutbildning,"Managers in elementary, high-school and adult education",9921,10016,10198,10548,10869,19007
-142,0.01,Chefer inom förskoleverksamhet,Managers in preschool activities,4072,4195,4463,4541,4771,8343
-149,0.05,Övriga chefer inom utbildning,Other managers within education,795,879,1094,1218,1240,2080
-151,0.01,Chefer inom hälso- och sjukvård,Healthcare managers'',10634,11005,11718,11933,12632,22090
-152,0.01,Chefer inom socialt och kurativt arbete,Managers of social and curative work,3783,4071,4812,5127,5114,8943
-153,0.08,Chefer inom äldreomsorg,Managers within elederly care,9066,9278,9716,9796,9832,15978
-154,0.02,Chefer och ledare inom trossamfund,Managers and leaders of faith communities,780,753,708,669,612,1059
-159,0.25,Övriga chefer inom samhällsservice,Other managers within societal services,15956,16208,16208,17549,17310,22932
-161,0.11,"Chefer inom bank, finans och försäkring","Managers in banking, finance and insurance",7180,7182,6203,5769,5588,8785
-171,0.0,Hotell- och konferenschefer,Hotel and conference managers,1251,1290,1471,1553,1512,2670
-172,0.08,Restaurang- och kökschefer,Restaurant and kitchen managers,6461,6936,7460,7738,7811,12693
-173,0.2,Chefer inom handel,Managers within trade,9659,9995,11092,10776,10567,14932
-174,0.2,"Chefer inom friskvård, sport och fritid","Managers within wellnes, sport and leisure",790,814,1304,1466,1500,2119
-179,0.17,Chefer inom övrig servicenäring,Other service managers,6319,6809,7020,7164,7243,10619
-211,0.3,Fysiker och kemister m.fl.,"Physicists, chemists and similar",5860,6182,6301,6308,6415,7932
-212,0.15,"Matematiker, aktuarier och statistiker","Mathematicians, actuaries and statisticians",1717,1752,1929,2166,2282,3426
-213,0.13,"Biologer, farmakologer och specialister inom lant- och skogsbruk m.fl.","Biologists, pharmacologists and specialists within agriculture and forestry",6466,6629,6585,6707,7044,10825
-214,0.07,Civilingenjörsyrken,Advanced engineering occupations,83636,85927,88418,94751,97891,160814
-216,0.29,Arkitekter och lantmätare,Architects and surveyors,10012,10448,11405,12476,12049,15111
-217,0.09,Designer och formgivare,Designers,12416,12989,14227,15271,15391,24740
-218,0.27,Specialister inom miljö- och hälsoskydd,Specialists within environmental- and health protection,7128,7070,7643,8217,8710,11231
-221,0.0,Läkare,Medical Doctors,37242,37474,38873,39826,41314,72978
-222,0.01,Sjuksköterskor,Nurses,83460,82208,83956,84165,84060,147002
-223,0.11,Sjuksköterskor (fortsättning),Other nurses,20933,20947,21623,21958,22043,34654
-224,0.01,Psykologer och psykoterapeuter,Psychologists and psychotherapists,7972,8044,8588,8917,9165,16027
-225,0.04,Veterinärer,Veterinarians,2100,2173,2308,2410,2536,4300
-226,0.02,Tandläkare,Dentists,5641,5774,6081,6248,6390,11061
-227,0.01,"Naprapater, sjukgymnaster och arbetsterapeuter m.fl.","Naprapaths, physiotherapists, occupational therapists and other",18903,18922,19896,20080,20449,35760
-228,0.02,Andra specialister inom hälso- och sjukvård,Other specialists within healthcare,7909,8334,9730,10450,10697,18517
-231,0.03,Universitets- och högskollärare,Teachers in higher education,35501,35697,35359,35839,36446,62448
-232,0.13,Lärare i yrkesämnen,Teacher in occupational subjects,10261,10027,10093,10202,10159,15612
-233,0.01,Gymnasielärare,High school teacher,28602,28531,29858,29625,30313,53010
-234,0.08,"Grundskollärare, fritidspedagoger och förskollärare",Teachers at elementary and pre-school level,183152,183764,189597,191929,192557,312929
-235,0.1,Andra pedagoger med teoretisk specialistkompetens,"Other teachers with theoretical, special competence",33313,34077,35506,36974,36817,58531
-241,0.53,"Revisorer, finansanalytiker och fondförvaltare m.fl.","Accountants, financial analysts and fund managers",45439,46341,46540,48844,51028,42364
-242,0.13,"Organisationsutvecklare, utredare och HR-specialister m.fl.",Organisational developers and HR-specialists,90289,93418,103534,108265,113928,175085
-243,0.23,Marknadsförare och informatörer m.fl.,Marketing and public relations,31743,32883,37141,36629,39171,53278
-251,0.08,"IT-arkitekter, systemutvecklare och testledare m.fl.","IT-architects, systemdevelopes and others",101543,104587,111725,118829,129323,210166
-261,0.18,Jurister,Lawyers,19601,19912,21037,21734,22687,32861
-262,0.28,Museiintendenter och bibliotekarier m.fl.,Museum superintendents and librarians,9854,9836,10496,10715,10924,13893
-264,0.23,"Författare, journalister och tolkar m.fl.","Authors, journalists and translators",13590,13633,14173,15013,14763,20080
-265,0.38,"Konstnärer, musiker och skådespelare m.fl.","Artists, musicians and actors",8435,8634,9150,9681,9927,10871
-266,0.05,Socialsekreterare och kuratorer m.fl.,Social secretaries and curators,33112,34112,38285,40322,46363,77802
-267,0.04,Präster och diakoner,Priests and deacons,3917,3827,3795,3832,3743,6347
-311,0.45,Ingenjörer och tekniker,Engineers and technicians,93243,93928,98649,102637,107702,104637
-312,0.12,Arbetsledare inom bygg och tillverkning m.m.,Construction and manufacturing supervisors,19003,19633,21382,23008,25192,39160
-315,0.38,"Piloter, fartygs- och maskinbefäl m.fl.","Pilots, ship and machine officers",4970,4924,5295,5449,5342,5850
-321,0.57,"Biomedicinska analytiker, tandtekniker och laboratorieingenjörer m.fl.","Biomedical analysts, dental technicians and labratory engineers",26210,26883,27193,26550,27132,20608
-323,0.13,Terapeuter inom alternativmedicin,Therapists in alternative medicine,86,76,119,130,117,179
-324,0.44,Djursjukskötare m.fl.,Animal nurses and others,1839,1977,2127,2466,2767,2737
-325,0.59,Tandhygienister,Dental hygienists,3671,3700,3773,3783,3831,2774
-331,0.51,Banktjänstemän och redovisningsekonomer m.fl.,Bankers and accountants,56713,55560,56687,57590,57890,50107
-332,0.37,"Försäkringsrådgivare, företagssäljare och inköpare m.fl.","Insurance advisors, business sales and purchasing ",136702,135499,134197,136544,137701,153241
-333,0.47,Förmedlare m.fl.,Intermediares and others,31974,32477,36325,37695,32167,30115
-334,0.64,"Juristsekreterare, chefssekreterare och institutionssekreterare m.fl.","Legal secretary, chief secretary and department secretary",9498,10180,11529,12553,17615,11201
-335,0.44,Skatte- och socialförsäkringshandläggare m.fl.,Tax and social security officers,44828,45789,47554,45312,44014,43538
-336,0.4,Poliser,Police officers,16395,16152,15947,15853,16319,17295
-341,0.13,Behandlingsassistenter och pastorer,Treatment assitants and pastors,18571,20355,25709,24543,21218,32607
-342,0.14,Idrottsutövare och fritidsledare m.fl.,Athletes and leisure coaches,20438,21529,23871,25072,27120,41199
-343,0.42,"Fotografer, dekoratörer och underhållningsartister m.fl.","Photographers, decorators and entertainment artists",6440,6992,7466,7123,7108,7282
-344,0.09,Trafiklärare och instruktörer,Trafic teachers and instructors,5358,5602,6211,6619,6334,10181
-345,0.36,Köksmästare och souschefer,Chefs and sous chefs,3376,3414,3647,3809,4031,4557
-351,0.18,"Drift-, support- och nätverkstekniker m.fl.","Operation, support and network technicians",45096,45384,46483,46927,46896,67928
-352,0.61,"Bild-, ljud- och ljustekniker m.fl.","Image, sound and lighting technicians",3633,3717,3891,4086,4345,2993
-411,0.88,Kontorsassistenter och sekreterare,Office assistants and secretaries,172049,172547,174494,174212,171935,36445
-421,0.67,Croupierer och inkasserare,Croupiers and debt collectors,1782,1809,1736,1954,2356,1373
-422,0.73,"Resesäljare, kundtjänstpersonal och receptionister m.fl.","Travel agents, customer service personell and receptionists",53131,57965,62331,64669,65140,31067
-432,0.78,Lagerpersonal och transportledare m.fl.,Warehouse workers and transport managers,87463,93448,93679,96346,101966,39625
-441,0.96,Biblioteks- och arkivassistenter m.fl.,Library and Archive Assistants,3408,3419,3463,3321,3320,234
-442,0.86,Brevbärare och postterminalarbetare,Mail and post workers,18200,17897,16842,17090,17093,4227
-443,0.67,Förtroendevalda,Elected official,548,536,869,968,962,560
-511,0.37,"Kabinpersonal, tågmästare och guider m.fl.","Cabin crew, train personell and guides",7975,7912,8050,8431,8788,9779
-512,0.73,Kockar och kallskänkor,Cooks and cold bar attendants,37220,39091,39641,41042,41600,19840
-513,0.86,"Hovmästare, servitörer och bartendrar","Head waitors, waitors and bartenders",21491,23940,23619,25794,26254,6492
-514,0.34,Skönhets- och kroppsterapeuter,Beauty and body therapists,7154,8132,9692,9997,10672,12441
-515,0.78,Städledare och fastighetsskötare m.fl.,Cleaning managers and property managers,39417,41091,42803,43635,45555,17703
-516,0.36,Övrig servicepersonal,Other servicepersonell,2522,2807,3309,3575,3975,4493
-522,0.64,Butikspersonal,Shop staff,205147,221697,223919,224222,226353,143942
-523,0.93,Kassapersonal m.fl.,Cashiers and others,13567,14887,15101,15316,13400,1656
-524,0.85,Eventsäljare och telefonförsäljare m.fl.,Event sales and telemarketing,8201,8747,9241,9524,8637,2288
-531,0.24,Barnskötare och elevassistenter m.fl.,Childcare and student assistants,98543,106758,115195,122579,126842,170284
-532,0.4,Undersköterskor,Assistant nurses,181670,184435,186915,186815,183057,194015
-533,0.42,Vårdbiträden,Nursing assistants,76879,79786,76546,78083,76698,78579
-534,0.37,"Skötare, vårdare och personliga assistenter m.fl.","Caretakers, carers and personal assistants",144685,153485,161192,159343,162602,180953
-535,0.59,Tandsköterskor,Dental nurses,10192,10030,10308,10459,10509,7611
-541,0.48,Andra bevaknings- och säkerhetsyrken,Other security proffessions,36272,36789,37697,38644,38724,35569
-611,0.67,Växtodlare inom jordbruk och trädgård,Plant growers in agriculture and gardening,16517,17377,17675,18138,18381,10714
-612,0.61,Djuruppfödare och djurskötare,Animal breeders and caretakers,7063,7836,8068,8300,8465,5831
+111,0.1005,Politiker och högre ämbetsmän,Politicians and higher officials,3876,3676,3889,3921,3028,4813
+112,0.0875,Verkställande direktörer m.fl.,Assorted Chief Officers,22860,23000,24598,22676,21895,35305
+121,0.069,Ekonomi- och finanschefer,Chief Financial Officers,16630,16615,16864,18056,18302,30110
+122,0.32393,Personal- och HR-chefer,Personell and HR officers,7684,7493,7876,8280,8876,10604
+123,0.42312,Förvaltnings- och planeringschefer,Administration and planning managers,10208,10282,10816,11482,10864,11075
+124,0.13371,"Informations-, kommunikations- och PR-chefer","Information, communication and PR managers",3319,3389,3789,4126,4418,6763
+125,0.117,Försäljnings- och marknadschefer,Sales and marketing managers,30741,31097,29866,31489,32321,50433
+129,0.29765,Övriga administrations- och servicechefer,Other administration and service managers,19059,19354,20973,21995,24002,29789
+131,0.035,IT-chefer,Information technology managers,11758,12044,10801,11283,11522,19648
+132,0.53031,"Inköps-, logistik- och transportchefer","Purchasing, logistics and transport managers",10087,10502,10954,11278,11454,9506
+133,0.0175,Forsknings- och utvecklingschefer,R&D managers,4999,5490,6232,6378,6334,10997
+134,0.25,Chefer inom arkitekt- och ingenjörsverksamhet,Architecture and engineering managers,8423,8953,9858,10710,11584,15352
+135,0.355,Fastighets- och förvaltningschefer,Real estate and administration managers,2863,3062,3742,3928,4026,4588
+136,0.16367,"Driftchefer inom bygg, anläggning och gruva","Construction, plant and mine operational managers",15933,16258,17035,18548,18401,27194
+137,0.03,Produktionschefer inom tillverkning,Production and manufacturing managers,14998,15836,16575,16651,17013,29162
+138,0.67513,Förvaltare inom skogsbruk och lantbruk m.fl.,Forestry and agriculture managers,514,553,607,643,758,435
+141,0.0073,Chefer inom grund- och gymnasieskola samt vuxenutbildning,"Managers in elementary, high-school and adult education",9921,10016,10198,10548,10869,19066
+142,0.015,Chefer inom förskoleverksamhet,Managers in preschool activities,4072,4195,4463,4541,4771,8304
+149,0.0482,Övriga chefer inom utbildning,Other managers within education,795,879,1094,1218,1240,2085
+151,0.0073,Chefer inom hälso- och sjukvård,Healthcare managers'',10634,11005,11718,11933,12632,22159
+152,0.007,Chefer inom socialt och kurativt arbete,Managers of social and curative work,3783,4071,4812,5127,5114,8973
+153,0.08365,Chefer inom äldreomsorg,Managers within elederly care,9066,9278,9716,9796,9832,15921
+154,0.01655,Chefer och ledare inom trossamfund,Managers and leaders of faith communities,780,753,708,669,612,1063
+159,0.25,Övriga chefer inom samhällsservice,Other managers within societal services,15956,16208,16208,17549,17310,22941
+161,0.1054,"Chefer inom bank, finans och försäkring","Managers in banking, finance and insurance",7180,7182,6203,5769,5588,8833
+171,0.0039,Hotell- och konferenschefer,Hotel and conference managers,1251,1290,1471,1553,1512,2661
+172,0.083,Restaurang- och kökschefer,Restaurant and kitchen managers,6461,6936,7460,7738,7811,12657
+173,0.2,Chefer inom handel,Managers within trade,9659,9995,11092,10776,10567,14938
+174,0.197,"Chefer inom friskvård, sport och fritid","Managers within wellnes, sport and leisure",790,814,1304,1466,1500,2128
+179,0.16875,Chefer inom övrig servicenäring,Other service managers,6319,6809,7020,7164,7243,10639
+211,0.29964,Fysiker och kemister m.fl.,"Physicists, chemists and similar",5860,6182,6301,6308,6415,7939
+212,0.1484,"Matematiker, aktuarier och statistiker","Mathematicians, actuaries and statisticians",1717,1752,1929,2166,2282,3434
+213,0.13052,"Biologer, farmakologer och specialister inom lant- och skogsbruk m.fl.","Biologists, pharmacologists and specialists within agriculture and forestry",6466,6629,6585,6707,7044,10823
+214,0.07375,Civilingenjörsyrken,Advanced engineering occupations,83636,85927,88418,94751,97891,160228
+216,0.2906,Arkitekter och lantmätare,Architects and surveyors,10012,10448,11405,12476,12049,15104
+217,0.09064,Designer och formgivare,Designers,12416,12989,14227,15271,15391,24732
+218,0.26678,Specialister inom miljö- och hälsoskydd,Specialists within environmental- and health protection,7128,7070,7643,8217,8710,11285
+221,0.0042,Läkare,Medical Doctors,37242,37474,38873,39826,41314,72700
+222,0.009,Sjuksköterskor,Nurses,83460,82208,83956,84165,84060,147208
+223,0.11167,Sjuksköterskor (fortsättning),Other nurses,20933,20947,21623,21958,22043,34603
+224,0.007,Psykologer och psykoterapeuter,Psychologists and psychotherapists,7972,8044,8588,8917,9165,16082
+225,0.038,Veterinärer,Veterinarians,2100,2173,2308,2410,2536,4311
+226,0.0215,Tandläkare,Dentists,5641,5774,6081,6248,6390,11049
+227,0.01244,"Naprapater, sjukgymnaster och arbetsterapeuter m.fl.","Naprapaths, physiotherapists, occupational therapists and other",18903,18922,19896,20080,20449,35686
+228,0.02235,Andra specialister inom hälso- och sjukvård,Other specialists within healthcare,7909,8334,9730,10450,10697,18480
+231,0.032,Universitets- och högskollärare,Teachers in higher education,35501,35697,35359,35839,36446,62343
+232,0.1344,Lärare i yrkesämnen,Teacher in occupational subjects,10261,10027,10093,10202,10159,15539
+233,0.0078,Gymnasielärare,High school teacher,28602,28531,29858,29625,30313,53149
+234,0.08153,"Grundskollärare, fritidspedagoger och förskollärare",Teachers at elementary and pre-school level,183152,183764,189597,191929,192557,312531
+235,0.10025,Andra pedagoger med teoretisk specialistkompetens,"Other teachers with theoretical, special competence",33313,34077,35506,36974,36817,58538
+241,0.53477,"Revisorer, finansanalytiker och fondförvaltare m.fl.","Accountants, financial analysts and fund managers",45439,46341,46540,48844,51028,41951
+242,0.12581,"Organisationsutvecklare, utredare och HR-specialister m.fl.",Organisational developers and HR-specialists,90289,93418,103534,108265,113928,175997
+243,0.2306,Marknadsförare och informatörer m.fl.,Marketing and public relations,31743,32883,37141,36629,39171,53258
+251,0.08389,"IT-arkitekter, systemutvecklare och testledare m.fl.","IT-architects, systemdevelopes and others",101543,104587,111725,118829,129323,209359
+261,0.18429,Jurister,Lawyers,19601,19912,21037,21734,22687,32702
+262,0.28411,Museiintendenter och bibliotekarier m.fl.,Museum superintendents and librarians,9854,9836,10496,10715,10924,13819
+264,0.22725,"Författare, journalister och tolkar m.fl.","Authors, journalists and translators",13590,13633,14173,15013,14763,20159
+265,0.38005,"Konstnärer, musiker och skådespelare m.fl.","Artists, musicians and actors",8435,8634,9150,9681,9927,10875
+266,0.05375,Socialsekreterare och kuratorer m.fl.,Social secretaries and curators,33112,34112,38285,40322,46363,77525
+267,0.03789,Präster och diakoner,Priests and deacons,3917,3827,3795,3832,3743,6363
+311,0.44948,Ingenjörer och tekniker,Engineers and technicians,93243,93928,98649,102637,107702,104777
+312,0.11867,Arbetsledare inom bygg och tillverkning m.m.,Construction and manufacturing supervisors,19003,19633,21382,23008,25192,39234
+315,0.37713,"Piloter, fartygs- och maskinbefäl m.fl.","Pilots, ship and machine officers",4970,4924,5295,5449,5342,5879
+321,0.57239,"Biomedicinska analytiker, tandtekniker och laboratorieingenjörer m.fl.","Biomedical analysts, dental technicians and labratory engineers",26210,26883,27193,26550,27132,20502
+323,0.13056,Terapeuter inom alternativmedicin,Therapists in alternative medicine,86,76,119,130,117,179
+324,0.4445,Djursjukskötare m.fl.,Animal nurses and others,1839,1977,2127,2466,2767,2716
+325,0.595,Tandhygienister,Dental hygienists,3671,3700,3773,3783,3831,2741
+331,0.51447,Banktjänstemän och redovisningsekonomer m.fl.,Bankers and accountants,56713,55560,56687,57590,57890,49669
+332,0.37277,"Försäkringsrådgivare, företagssäljare och inköpare m.fl.","Insurance advisors, business sales and purchasing ",136702,135499,134197,136544,137701,152627
+333,0.4709,Förmedlare m.fl.,Intermediares and others,31974,32477,36325,37695,32167,30075
+334,0.6395,"Juristsekreterare, chefssekreterare och institutionssekreterare m.fl.","Legal secretary, chief secretary and department secretary",9498,10180,11529,12553,17615,11221
+335,0.435,Skatte- och socialförsäkringshandläggare m.fl.,Tax and social security officers,44828,45789,47554,45312,44014,43944
+336,0.40097,Poliser,Police officers,16395,16152,15947,15853,16319,17274
+341,0.13,Behandlingsassistenter och pastorer,Treatment assitants and pastors,18571,20355,25709,24543,21218,32620
+342,0.14278,Idrottsutövare och fritidsledare m.fl.,Athletes and leisure coaches,20438,21529,23871,25072,27120,41081
+343,0.41637,"Fotografer, dekoratörer och underhållningsartister m.fl.","Photographers, decorators and entertainment artists",6440,6992,7466,7123,7108,7330
+344,0.09331,Trafiklärare och instruktörer,Trafic teachers and instructors,5358,5602,6211,6619,6334,10148
+345,0.365,Köksmästare och souschefer,Chefs and sous chefs,3376,3414,3647,3809,4031,4523
+351,0.18,"Drift-, support- och nätverkstekniker m.fl.","Operation, support and network technicians",45096,45384,46483,46927,46896,67954
+352,0.61083,"Bild-, ljud- och ljustekniker m.fl.","Image, sound and lighting technicians",3633,3717,3891,4086,4345,2988
+411,0.88297,Kontorsassistenter och sekreterare,Office assistants and secretaries,172049,172547,174494,174212,171935,35557
+421,0.67167,Croupierer och inkasserare,Croupiers and debt collectors,1782,1809,1736,1954,2356,1366
+422,0.7276,"Resesäljare, kundtjänstpersonal och receptionister m.fl.","Travel agents, customer service personell and receptionists",53131,57965,62331,64669,65140,31356
+432,0.77711,Lagerpersonal och transportledare m.fl.,Warehouse workers and transport managers,87463,93448,93679,96346,101966,40162
+441,0.9575,Biblioteks- och arkivassistenter m.fl.,Library and Archive Assistants,3408,3419,3463,3321,3320,249
+442,0.86,Brevbärare och postterminalarbetare,Mail and post workers,18200,17897,16842,17090,17093,4228
+443,0.67457,Förtroendevalda,Elected official,548,536,869,968,962,553
+511,0.36888,"Kabinpersonal, tågmästare och guider m.fl.","Cabin crew, train personell and guides",7975,7912,8050,8431,8788,9801
+512,0.732,Kockar och kallskänkor,Cooks and cold bar attendants,37220,39091,39641,41042,41600,19701
+513,0.85667,"Hovmästare, servitörer och bartendrar","Head waitors, waitors and bartenders",21491,23940,23619,25794,26254,6649
+514,0.34342,Skönhets- och kroppsterapeuter,Beauty and body therapists,7154,8132,9692,9997,10672,12382
+515,0.78,Städledare och fastighetsskötare m.fl.,Cleaning managers and property managers,39417,41091,42803,43635,45555,17710
+516,0.35526,Övrig servicepersonal,Other servicepersonell,2522,2807,3309,3575,3975,4528
+522,0.6373,Butikspersonal,Shop staff,205147,221697,223919,224222,226353,145078
+523,0.934,Kassapersonal m.fl.,Cashiers and others,13567,14887,15101,15316,13400,1562
+524,0.855,Eventsäljare och telefonförsäljare m.fl.,Event sales and telemarketing,8201,8747,9241,9524,8637,2213
+531,0.24,Barnskötare och elevassistenter m.fl.,Childcare and student assistants,98543,106758,115195,122579,126842,170351
+532,0.40056,Undersköterskor,Assistant nurses,181670,184435,186915,186815,183057,193910
+533,0.419,Vårdbiträden,Nursing assistants,76879,79786,76546,78083,76698,78746
+534,0.37022,"Skötare, vårdare och personliga assistenter m.fl.","Caretakers, carers and personal assistants",144685,153485,161192,159343,162602,180960
+535,0.595,Tandsköterskor,Dental nurses,10192,10030,10308,10459,10509,7521
+541,0.47885,Andra bevaknings- och säkerhetsyrken,Other security proffessions,36272,36789,37697,38644,38724,35662
+611,0.67,Växtodlare inom jordbruk och trädgård,Plant growers in agriculture and gardening,16517,17377,17675,18138,18381,10718
+612,0.612,Djuruppfödare och djurskötare,Animal breeders and caretakers,7063,7836,8068,8300,8465,5804
 613,0.76,"Växtodlare och djuruppfödare, blandad drift","Plant breeders and animal breeders, mixed operation",3612,4145,3946,3897,3687,1563
-621,0.72,Skogsarbetare,Forestry workers,3466,3578,3590,3737,3644,1802
+621,0.71857,Skogsarbetare,Forestry workers,3466,3578,3590,3737,3644,1812
 622,0.72,Fiskodlare och fiskare,Fishery workers and fishers,474,489,553,586,604,298
-711,0.67,"Snickare, murare och anläggningsarbetare","Carpenter, mason and construction workers",93307,98581,100639,106208,108606,63309
-712,0.67,"Takmontörer, golvläggare och VVS-montörer m.fl.","Ceiling fittings, flooring and plumbing workers",34242,35470,35869,36659,37942,22117
-713,0.78,"Målare, lackerare och skorstensfejare m.fl.","Painters, lacquers and chimney sweeps",23322,24133,24293,25458,26289,10216
-721,0.78,"Gjutare, svetsare och plåtslagare m.fl.","Casters, welders and sheet metal blowers",25106,26408,26927,27140,27022,10501
-722,0.85,Smeder och verktygsmakare m.fl.,Blacksmiths and toolmakers,53171,56707,59479,58119,52175,13824
-723,0.59,Fordonsmekaniker och reparatörer m.fl.,Vehicle mechanics and repairers,54866,58769,58964,59391,62316,45131
-731,0.64,Finmekaniker och konsthantverkare m.fl.,Fine mechanics and craftsmen,3825,3840,4108,3901,4113,2615
-732,0.73,"Prepresstekniker, tryckare och bokbindare m.fl.","Prepress technicians, printers and bookbinders",8704,8613,8179,8046,7702,3673
-741,0.54,Installations- och industrielektriker m.fl.,Installation and industrial electricians,39365,41083,41852,42712,43793,35584
-742,0.53,Elektronikreparatörer och kommunikationselektriker m.fl.,Electronics repairers and communication electricians,9603,10255,10613,10439,10671,8859
-752,0.83,"Ytbehandlare, trä och möbelsnickare m.fl.","Surface finishers, wood and furniture carpenters",10666,10960,11180,11269,11200,3363
-753,0.6,"Skräddare, tapetserare och läderhantverkare m.fl.","Tailors, wallpapers and leather craftsmen",2099,2244,2466,2401,2379,1680
-761,0.78,"Slaktare, bagare och livsmedelsförädlare m.fl.","Butchers, bakers and food processors",7436,8131,8315,8609,8488,3298
-811,0.77,Malmförädlingsyrken och brunnsborrare m.fl.,The ore processing profession and well drillers,8405,7306,8934,7694,8542,3470
-812,0.88,"Process- och maskinoperatörer, vid stål- och metallverk","Process and machine operators, at steel and metal plants",15788,14057,14526,14606,17573,3725
-813,0.87,"Maskinoperatörer, kemiska och farmaceutiska produkter m.m.","Machine operators, chemical and pharmaceutical products",5509,5513,5179,5194,5279,1212
-814,0.87,"Maskinoperatörer, gummi-, plast- och pappersvaruindustri","Machine operators, rubber, plastic and stationery industry",13743,13640,13379,14010,14204,3261
-815,0.87,"Maskinoperatörer, textil-, tvätt- och läderindustri m.m.","Machine operators, textile, laundry and leather industry",5280,5389,5287,5463,5438,1248
-816,0.82,"Maskinoperatörer, livsmedelsindustri","Machine operators, food industry",15482,15400,15692,15171,15901,5055
-817,0.73,"Processoperatörer, trä- och pappersindustri","Process operators, wood and paper industry",16346,16796,16605,16398,16805,8014
-818,0.81,Andra process- och maskinoperatörer,Other process and machine operators,8511,9038,8333,8791,7781,2611
-819,0.7,Drifttekniker och processövervakare,Operating technicians and process supervisors,18922,18939,19093,20287,19543,10356
-821,0.92,Montörer,Installers,53785,52317,49282,56305,61879,8744
-831,0.64,Lokförare och bangårdspersonal,Locomotive driver and yard staff,5347,5339,5635,5618,5618,3572
-832,0.58,"Bil-, motorcykel och cykelförare","Car, motorcycle and bicycle driver",18014,18389,18638,18899,18825,13966
-833,0.54,Lastbils- och bussförare,Truck and bus driver,78337,79782,80359,81267,81346,66098
-834,0.73,Maskinförare,Machine drivers,33370,35201,34912,36019,37492,17881
-835,0.72,Matroser och jungmän m.fl.,Sailors and deckhands,1063,1078,1087,1433,1398,691
-911,0.47,Städare och hemservicepersonal m.fl.,Cleaners and home service staff,70619,76003,75409,76708,78575,73563
-912,0.61,"Tvättare, fönsterputsare och övriga rengöringsarbetare","Washers, window cleaners and other cleaning workers",3529,4075,5638,7056,7110,4898
-921,0.88,Bärplockare och plantörer m.fl.,Berry pickers and planters,2600,2905,3140,2920,3144,666
-931,0.82,Grovarbetare inom bygg och anläggning,Rough workers in construction and civil engineering,5076,5932,6510,6642,7375,2344
-932,0.71,Handpaketerare och andra fabriksarbetare,Hand packers and other factory workers,12606,11737,11184,11656,11291,5784
-933,0.53,Hamnarbetare och ramppersonal m.fl.,Harbor workers and ramp staff,6883,7261,7970,8355,10034,8330
-941,0.89,"Snabbmatspersonal, köks- och restaurangbiträden m.fl.","Fast food staff, kitchen and restaurant assistants",68912,77998,77340,79024,79038,15357
+711,0.66976,"Snickare, murare och anläggningsarbetare","Carpenter, mason and construction workers",93307,98581,100639,106208,108606,63380
+712,0.66692,"Takmontörer, golvläggare och VVS-montörer m.fl.","Ceiling fittings, flooring and plumbing workers",34242,35470,35869,36659,37942,22332
+713,0.78125,"Målare, lackerare och skorstensfejare m.fl.","Painters, lacquers and chimney sweeps",23322,24133,24293,25458,26289,10162
+721,0.77714,"Gjutare, svetsare och plåtslagare m.fl.","Casters, welders and sheet metal blowers",25106,26408,26927,27140,27022,10641
+722,0.85,Smeder och verktygsmakare m.fl.,Blacksmiths and toolmakers,53171,56707,59479,58119,52175,13830
+723,0.59464,Fordonsmekaniker och reparatörer m.fl.,Vehicle mechanics and repairers,54866,58769,58964,59391,62316,44638
+731,0.63787,Finmekaniker och konsthantverkare m.fl.,Fine mechanics and craftsmen,3825,3840,4108,3901,4113,2632
+732,0.7275,"Prepresstekniker, tryckare och bokbindare m.fl.","Prepress technicians, printers and bookbinders",8704,8613,8179,8046,7702,3708
+741,0.53894,Installations- och industrielektriker m.fl.,Installation and industrial electricians,39365,41083,41852,42712,43793,35680
+742,0.53373,Elektronikreparatörer och kommunikationselektriker m.fl.,Electronics repairers and communication electricians,9603,10255,10613,10439,10671,8792
+752,0.83375,"Ytbehandlare, trä och möbelsnickare m.fl.","Surface finishers, wood and furniture carpenters",10666,10960,11180,11269,11200,3290
+753,0.60135,"Skräddare, tapetserare och läderhantverkare m.fl.","Tailors, wallpapers and leather craftsmen",2099,2244,2466,2401,2379,1675
+761,0.781,"Slaktare, bagare och livsmedelsförädlare m.fl.","Butchers, bakers and food processors",7436,8131,8315,8609,8488,3284
+811,0.77273,Malmförädlingsyrken och brunnsborrare m.fl.,The ore processing profession and well drillers,8405,7306,8934,7694,8542,3430
+812,0.88,"Process- och maskinoperatörer, vid stål- och metallverk","Process and machine operators, at steel and metal plants",15788,14057,14526,14606,17573,3726
+813,0.86714,"Maskinoperatörer, kemiska och farmaceutiska produkter m.m.","Machine operators, chemical and pharmaceutical products",5509,5513,5179,5194,5279,1239
+814,0.87368,"Maskinoperatörer, gummi-, plast- och pappersvaruindustri","Machine operators, rubber, plastic and stationery industry",13743,13640,13379,14010,14204,3170
+815,0.86571,"Maskinoperatörer, textil-, tvätt- och läderindustri m.m.","Machine operators, textile, laundry and leather industry",5280,5389,5287,5463,5438,1290
+816,0.816,"Maskinoperatörer, livsmedelsindustri","Machine operators, food industry",15482,15400,15692,15171,15901,5170
+817,0.73429,"Processoperatörer, trä- och pappersindustri","Process operators, wood and paper industry",16346,16796,16605,16398,16805,7890
+818,0.81285,Andra process- och maskinoperatörer,Other process and machine operators,8511,9038,8333,8791,7781,2573
+819,0.69513,Drifttekniker och processövervakare,Operating technicians and process supervisors,18922,18939,19093,20287,19543,10528
+821,0.91571,Montörer,Installers,53785,52317,49282,56305,61879,9216
+831,0.63867,Lokförare och bangårdspersonal,Locomotive driver and yard staff,5347,5339,5635,5618,5618,3587
+832,0.58362,"Bil-, motorcykel och cykelförare","Car, motorcycle and bicycle driver",18014,18389,18638,18899,18825,13851
+833,0.54467,Lastbils- och bussförare,Truck and bus driver,78337,79782,80359,81267,81346,65453
+834,0.72908,Maskinförare,Machine drivers,33370,35201,34912,36019,37492,17949
+835,0.725,Matroser och jungmän m.fl.,Sailors and deckhands,1063,1078,1087,1433,1398,679
+911,0.46571,Städare och hemservicepersonal m.fl.,Cleaners and home service staff,70619,76003,75409,76708,78575,74187
+912,0.61333,"Tvättare, fönsterputsare och övriga rengöringsarbetare","Washers, window cleaners and other cleaning workers",3529,4075,5638,7056,7110,4858
+921,0.88333,Bärplockare och plantörer m.fl.,Berry pickers and planters,2600,2905,3140,2920,3144,648
+931,0.81778,Grovarbetare inom bygg och anläggning,Rough workers in construction and civil engineering,5076,5932,6510,6642,7375,2374
+932,0.705,Handpaketerare och andra fabriksarbetare,Hand packers and other factory workers,12606,11737,11184,11656,11291,5886
+933,0.528,Hamnarbetare och ramppersonal m.fl.,Harbor workers and ramp staff,6883,7261,7970,8355,10034,8369
+941,0.88625,"Snabbmatspersonal, köks- och restaurangbiträden m.fl.","Fast food staff, kitchen and restaurant assistants",68912,77998,77340,79024,79038,15887
 952,0.92,Torg- och marknadsförsäljare,Square and market vendors,121,142,149,157,190,26
-961,0.63,Återvinningsarbetare,Recycling workers,8379,8622,8875,8819,9000,5882
-962,0.83,"Tidningsdistributörer, vaktmästare och övriga servicearbetare","Newspaper distributors, custodians and other service workers",38426,38701,39224,39889,39719,11927
+961,0.62967,Återvinningsarbetare,Recycling workers,8379,8622,8875,8819,9000,5889
+962,0.82885,"Tidningsdistributörer, vaktmästare och övriga servicearbetare","Newspaper distributors, custodians and other service workers",38426,38701,39224,39889,39719,12012

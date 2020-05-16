@@ -1,8 +1,8 @@
 \begin{longtable}{llrllr}
 \label{tab:occ_res}\\
 \toprule
-{} &                                                                  Description & Computerisation \textbackslash  Probability & Employment \textbackslash  2014 & Employment \textbackslash  2018 & Post-shock \textbackslash  demand \\
-\textbf{ssyk3} &                                                                              &                               &                   &                   &                     \\
+{} &                                                                  Description & Computerisation Probability & Employment 2014 & Employment 2018 & Post-shock demand \\
+\textbf{ssyk3} &                                                                              &                             &                 &                 &                   \\
 \midrule
 \endhead
 \midrule
@@ -12,149 +12,149 @@
 
 \bottomrule
 \endlastfoot
-\textbf{111  } &                                             Politicians and higher officials &                          0.10 &              3876 &              3028 &                4813 \\
-\textbf{112  } &                                                      Assorted Chief Officers &                          0.09 &             22860 &             21895 &               35195 \\
-\textbf{121  } &                                                     Chief Financial Officers &                          0.07 &             16630 &             18302 &               30066 \\
-\textbf{122  } &                                                    Personell and HR officers &                          0.32 &              7684 &              8876 &               10661 \\
-\textbf{123  } &                                         Administration and planning managers &                          0.42 &             10208 &             10864 &               11130 \\
-\textbf{124  } &                                   Information, communication and PR managers &                          0.13 &              3319 &              4418 &                6789 \\
-\textbf{125  } &                                                 Sales and marketing managers &                          0.12 &             30741 &             32321 &               50241 \\
-\textbf{129  } &                                    Other administration and service managers &                          0.30 &             19059 &             24002 &               29678 \\
-\textbf{131  } &                                              Information technology managers &                          0.04 &             11758 &             11522 &               19538 \\
-\textbf{132  } &                                 Purchasing, logistics and transport managers &                          0.53 &             10087 &             11454 &                9509 \\
-\textbf{133  } &                                                                 R\&D managers &                          0.02 &              4999 &              6334 &               10964 \\
-\textbf{134  } &                                        Architecture and engineering managers &                          0.25 &              8423 &             11584 &               15346 \\
-\textbf{135  } &                                      Real estate and administration managers &                          0.35 &              2863 &              4026 &                4622 \\
-\textbf{136  } &                            Construction, plant and mine operational managers &                          0.16 &             15933 &             18401 &               27303 \\
-\textbf{137  } &                                        Production and manufacturing managers &                          0.03 &             14998 &             17013 &               29150 \\
-\textbf{138  } &                                            Forestry and agriculture managers &                          0.68 &               514 &               758 &                 428 \\
-\textbf{141  } &                      Managers in elementary, high-school and adult education &                          0.01 &              9921 &             10869 &               19007 \\
-\textbf{142  } &                                             Managers in preschool activities &                          0.01 &              4072 &              4771 &                8343 \\
-\textbf{149  } &                                              Other managers within education &                          0.05 &               795 &              1240 &                2080 \\
-\textbf{151  } &                                                        Healthcare managers'' &                          0.01 &             10634 &             12632 &               22090 \\
-\textbf{152  } &                                         Managers of social and curative work &                          0.01 &              3783 &              5114 &                8943 \\
-\textbf{153  } &                                                Managers within elederly care &                          0.08 &              9066 &              9832 &               15978 \\
-\textbf{154  } &                                    Managers and leaders of faith communities &                          0.02 &               780 &               612 &                1059 \\
-\textbf{159  } &                                      Other managers within societal services &                          0.25 &             15956 &             17310 &               22932 \\
-\textbf{161  } &                                   Managers in banking, finance and insurance &                          0.11 &              7180 &              5588 &                8785 \\
-\textbf{171  } &                                                Hotel and conference managers &                          0.00 &              1251 &              1512 &                2670 \\
-\textbf{172  } &                                              Restaurant and kitchen managers &                          0.08 &              6461 &              7811 &               12693 \\
-\textbf{173  } &                                                        Managers within trade &                          0.20 &              9659 &             10567 &               14932 \\
-\textbf{174  } &                                   Managers within wellnes, sport and leisure &                          0.20 &               790 &              1500 &                2119 \\
-\textbf{179  } &                                                       Other service managers &                          0.17 &              6319 &              7243 &               10619 \\
-\textbf{211  } &                                             Physicists, chemists and similar &                          0.30 &              5860 &              6415 &                7932 \\
-\textbf{212  } &                                  Mathematicians, actuaries and statisticians &                          0.15 &              1717 &              2282 &                3426 \\
-\textbf{213  } &  Biologists, pharmacologists and specialists within agriculture and forestry &                          0.13 &              6466 &              7044 &               10825 \\
-\textbf{214  } &                                             Advanced engineering occupations &                          0.07 &             83636 &             97891 &              160814 \\
-\textbf{216  } &                                                     Architects and surveyors &                          0.29 &             10012 &             12049 &               15111 \\
-\textbf{217  } &                                                                    Designers &                          0.09 &             12416 &             15391 &               24740 \\
-\textbf{218  } &                      Specialists within environmental- and health protection &                          0.27 &              7128 &              8710 &               11231 \\
-\textbf{221  } &                                                              Medical Doctors &                          0.00 &             37242 &             41314 &               72978 \\
-\textbf{222  } &                                                                       Nurses &                          0.01 &             83460 &             84060 &              147002 \\
-\textbf{223  } &                                                                 Other nurses &                          0.11 &             20933 &             22043 &               34654 \\
-\textbf{224  } &                                           Psychologists and psychotherapists &                          0.01 &              7972 &              9165 &               16027 \\
-\textbf{225  } &                                                                Veterinarians &                          0.04 &              2100 &              2536 &                4300 \\
-\textbf{226  } &                                                                     Dentists &                          0.02 &              5641 &              6390 &               11061 \\
-\textbf{227  } &              Naprapaths, physiotherapists, occupational therapists and other &                          0.01 &             18903 &             20449 &               35760 \\
-\textbf{228  } &                                          Other specialists within healthcare &                          0.02 &              7909 &             10697 &               18517 \\
-\textbf{231  } &                                                 Teachers in higher education &                          0.03 &             35501 &             36446 &               62448 \\
-\textbf{232  } &                                             Teacher in occupational subjects &                          0.13 &             10261 &             10159 &               15612 \\
-\textbf{233  } &                                                          High school teacher &                          0.01 &             28602 &             30313 &               53010 \\
-\textbf{234  } &                                  Teachers at elementary and pre-school level &                          0.08 &            183152 &            192557 &              312929 \\
-\textbf{235  } &                          Other teachers with theoretical, special competence &                          0.10 &             33313 &             36817 &               58531 \\
-\textbf{241  } &                            Accountants, financial analysts and fund managers &                          0.53 &             45439 &             51028 &               42364 \\
-\textbf{242  } &                                 Organisational developers and HR-specialists &                          0.13 &             90289 &            113928 &              175085 \\
-\textbf{243  } &                                               Marketing and public relations &                          0.23 &             31743 &             39171 &               53278 \\
-\textbf{251  } &                                    IT-architects, systemdevelopes and others &                          0.08 &            101543 &            129323 &              210166 \\
-\textbf{261  } &                                                                      Lawyers &                          0.18 &             19601 &             22687 &               32861 \\
-\textbf{262  } &                                        Museum superintendents and librarians &                          0.28 &              9854 &             10924 &               13893 \\
-\textbf{264  } &                                         Authors, journalists and translators &                          0.23 &             13590 &             14763 &               20080 \\
-\textbf{265  } &                                                Artists, musicians and actors &                          0.38 &              8435 &              9927 &               10871 \\
-\textbf{266  } &                                              Social secretaries and curators &                          0.05 &             33112 &             46363 &               77802 \\
-\textbf{267  } &                                                          Priests and deacons &                          0.04 &              3917 &              3743 &                6347 \\
-\textbf{311  } &                                                    Engineers and technicians &                          0.45 &             93243 &            107702 &              104637 \\
-\textbf{312  } &                                   Construction and manufacturing supervisors &                          0.12 &             19003 &             25192 &               39160 \\
-\textbf{315  } &                                            Pilots, ship and machine officers &                          0.38 &              4970 &              5342 &                5850 \\
-\textbf{321  } &              Biomedical analysts, dental technicians and labratory engineers &                          0.57 &             26210 &             27132 &               20608 \\
-\textbf{323  } &                                           Therapists in alternative medicine &                          0.13 &                86 &               117 &                 179 \\
-\textbf{324  } &                                                     Animal nurses and others &                          0.44 &              1839 &              2767 &                2737 \\
-\textbf{325  } &                                                            Dental hygienists &                          0.59 &              3671 &              3831 &                2774 \\
-\textbf{331  } &                                                      Bankers and accountants &                          0.51 &             56713 &             57890 &               50107 \\
-\textbf{332  } &                           Insurance advisors, business sales and purchasing  &                          0.37 &            136702 &            137701 &              153241 \\
-\textbf{333  } &                                                     Intermediares and others &                          0.47 &             31974 &             32167 &               30115 \\
-\textbf{334  } &                    Legal secretary, chief secretary and department secretary &                          0.64 &              9498 &             17615 &               11201 \\
-\textbf{335  } &                                             Tax and social security officers &                          0.44 &             44828 &             44014 &               43538 \\
-\textbf{336  } &                                                              Police officers &                          0.40 &             16395 &             16319 &               17295 \\
-\textbf{341  } &                                              Treatment assitants and pastors &                          0.13 &             18571 &             21218 &               32607 \\
-\textbf{342  } &                                                 Athletes and leisure coaches &                          0.14 &             20438 &             27120 &               41199 \\
-\textbf{343  } &                          Photographers, decorators and entertainment artists &                          0.42 &              6440 &              7108 &                7282 \\
-\textbf{344  } &                                              Trafic teachers and instructors &                          0.09 &              5358 &              6334 &               10181 \\
-\textbf{345  } &                                                         Chefs and sous chefs &                          0.36 &              3376 &              4031 &                4557 \\
-\textbf{351  } &                                   Operation, support and network technicians &                          0.18 &             45096 &             46896 &               67928 \\
-\textbf{352  } &                                        Image, sound and lighting technicians &                          0.61 &              3633 &              4345 &                2993 \\
-\textbf{411  } &                                            Office assistants and secretaries &                          0.88 &            172049 &            171935 &               36445 \\
-\textbf{421  } &                                                Croupiers and debt collectors &                          0.67 &              1782 &              2356 &                1373 \\
-\textbf{422  } &                  Travel agents, customer service personell and receptionists &                          0.73 &             53131 &             65140 &               31067 \\
-\textbf{432  } &                                     Warehouse workers and transport managers &                          0.78 &             87463 &            101966 &               39625 \\
-\textbf{441  } &                                               Library and Archive Assistants &                          0.96 &              3408 &              3320 &                 234 \\
-\textbf{442  } &                                                        Mail and post workers &                          0.86 &             18200 &             17093 &                4227 \\
-\textbf{443  } &                                                             Elected official &                          0.67 &               548 &               962 &                 560 \\
-\textbf{511  } &                                       Cabin crew, train personell and guides &                          0.37 &              7975 &              8788 &                9779 \\
-\textbf{512  } &                                                Cooks and cold bar attendants &                          0.73 &             37220 &             41600 &               19840 \\
-\textbf{513  } &                                         Head waitors, waitors and bartenders &                          0.86 &             21491 &             26254 &                6492 \\
-\textbf{514  } &                                                   Beauty and body therapists &                          0.34 &              7154 &             10672 &               12441 \\
-\textbf{515  } &                                      Cleaning managers and property managers &                          0.78 &             39417 &             45555 &               17703 \\
-\textbf{516  } &                                                       Other servicepersonell &                          0.36 &              2522 &              3975 &                4493 \\
-\textbf{522  } &                                                                   Shop staff &                          0.64 &            205147 &            226353 &              143942 \\
-\textbf{523  } &                                                          Cashiers and others &                          0.93 &             13567 &             13400 &                1656 \\
-\textbf{524  } &                                                Event sales and telemarketing &                          0.85 &              8201 &              8637 &                2288 \\
-\textbf{531  } &                                             Childcare and student assistants &                          0.24 &             98543 &            126842 &              170284 \\
-\textbf{532  } &                                                             Assistant nurses &                          0.40 &            181670 &            183057 &              194015 \\
-\textbf{533  } &                                                           Nursing assistants &                          0.42 &             76879 &             76698 &               78579 \\
-\textbf{534  } &                                   Caretakers, carers and personal assistants &                          0.37 &            144685 &            162602 &              180953 \\
-\textbf{535  } &                                                                Dental nurses &                          0.59 &             10192 &             10509 &                7611 \\
-\textbf{541  } &                                                  Other security proffessions &                          0.48 &             36272 &             38724 &               35569 \\
-\textbf{611  } &                                   Plant growers in agriculture and gardening &                          0.67 &             16517 &             18381 &               10714 \\
-\textbf{612  } &                                               Animal breeders and caretakers &                          0.61 &              7063 &              8465 &                5831 \\
-\textbf{613  } &                          Plant breeders and animal breeders, mixed operation &                          0.76 &              3612 &              3687 &                1563 \\
-\textbf{621  } &                                                             Forestry workers &                          0.72 &              3466 &              3644 &                1802 \\
-\textbf{622  } &                                                  Fishery workers and fishers &                          0.72 &               474 &               604 &                 298 \\
-\textbf{711  } &                                    Carpenter, mason and construction workers &                          0.67 &             93307 &            108606 &               63309 \\
-\textbf{712  } &                              Ceiling fittings, flooring and plumbing workers &                          0.67 &             34242 &             37942 &               22117 \\
-\textbf{713  } &                                        Painters, lacquers and chimney sweeps &                          0.78 &             23322 &             26289 &               10216 \\
-\textbf{721  } &                                     Casters, welders and sheet metal blowers &                          0.78 &             25106 &             27022 &               10501 \\
-\textbf{722  } &                                                   Blacksmiths and toolmakers &                          0.85 &             53171 &             52175 &               13824 \\
-\textbf{723  } &                                              Vehicle mechanics and repairers &                          0.59 &             54866 &             62316 &               45131 \\
-\textbf{731  } &                                                 Fine mechanics and craftsmen &                          0.64 &              3825 &              4113 &                2615 \\
-\textbf{732  } &                               Prepress technicians, printers and bookbinders &                          0.73 &              8704 &              7702 &                3673 \\
-\textbf{741  } &                                     Installation and industrial electricians &                          0.54 &             39365 &             43793 &               35584 \\
-\textbf{742  } &                         Electronics repairers and communication electricians &                          0.53 &              9603 &             10671 &                8859 \\
-\textbf{752  } &                             Surface finishers, wood and furniture carpenters &                          0.83 &             10666 &             11200 &                3363 \\
-\textbf{753  } &                                    Tailors, wallpapers and leather craftsmen &                          0.60 &              2099 &              2379 &                1680 \\
-\textbf{761  } &                                         Butchers, bakers and food processors &                          0.78 &              7436 &              8488 &                3298 \\
-\textbf{811  } &                              The ore processing profession and well drillers &                          0.77 &              8405 &              8542 &                3470 \\
-\textbf{812  } &                     Process and machine operators, at steel and metal plants &                          0.88 &             15788 &             17573 &                3725 \\
-\textbf{813  } &                      Machine operators, chemical and pharmaceutical products &                          0.87 &              5509 &              5279 &                1212 \\
-\textbf{814  } &                   Machine operators, rubber, plastic and stationery industry &                          0.87 &             13743 &             14204 &                3261 \\
-\textbf{815  } &                     Machine operators, textile, laundry and leather industry &                          0.87 &              5280 &              5438 &                1248 \\
-\textbf{816  } &                                             Machine operators, food industry &                          0.82 &             15482 &             15901 &                5055 \\
-\textbf{817  } &                                   Process operators, wood and paper industry &                          0.73 &             16346 &             16805 &                8014 \\
-\textbf{818  } &                                          Other process and machine operators &                          0.81 &              8511 &              7781 &                2611 \\
-\textbf{819  } &                                Operating technicians and process supervisors &                          0.70 &             18922 &             19543 &               10356 \\
-\textbf{821  } &                                                                   Installers &                          0.92 &             53785 &             61879 &                8744 \\
-\textbf{831  } &                                             Locomotive driver and yard staff &                          0.64 &              5347 &              5618 &                3572 \\
-\textbf{832  } &                                           Car, motorcycle and bicycle driver &                          0.58 &             18014 &             18825 &               13966 \\
-\textbf{833  } &                                                         Truck and bus driver &                          0.54 &             78337 &             81346 &               66098 \\
-\textbf{834  } &                                                              Machine drivers &                          0.73 &             33370 &             37492 &               17881 \\
-\textbf{835  } &                                                        Sailors and deckhands &                          0.72 &              1063 &              1398 &                 691 \\
-\textbf{911  } &                                              Cleaners and home service staff &                          0.47 &             70619 &             78575 &               73563 \\
-\textbf{912  } &                          Washers, window cleaners and other cleaning workers &                          0.61 &              3529 &              7110 &                4898 \\
-\textbf{921  } &                                                   Berry pickers and planters &                          0.88 &              2600 &              3144 &                 666 \\
-\textbf{931  } &                          Rough workers in construction and civil engineering &                          0.82 &              5076 &              7375 &                2344 \\
-\textbf{932  } &                                       Hand packers and other factory workers &                          0.71 &             12606 &             11291 &                5784 \\
-\textbf{933  } &                                                Harbor workers and ramp staff &                          0.53 &              6883 &             10034 &                8330 \\
-\textbf{941  } &                           Fast food staff, kitchen and restaurant assistants &                          0.89 &             68912 &             79038 &               15357 \\
-\textbf{952  } &                                                    Square and market vendors &                          0.92 &               121 &               190 &                  26 \\
-\textbf{961  } &                                                            Recycling workers &                          0.63 &              8379 &              9000 &                5882 \\
-\textbf{962  } &                 Newspaper distributors, custodians and other service workers &                          0.83 &             38426 &             39719 &               11927 \\
+\textbf{171  } &                                                Hotel and conference managers &                     0.00390 &            1251 &            1512 &              2661 \\
+\textbf{221  } &                                                              Medical Doctors &                     0.00420 &           37242 &           41314 &             72700 \\
+\textbf{224  } &                                           Psychologists and psychotherapists &                     0.00700 &            7972 &            9165 &             16082 \\
+\textbf{152  } &                                         Managers of social and curative work &                     0.00700 &            3783 &            5114 &              8973 \\
+\textbf{151  } &                                                        Healthcare managers'' &                     0.00730 &           10634 &           12632 &             22159 \\
+\textbf{141  } &                      Managers in elementary, high-school and adult education &                     0.00730 &            9921 &           10869 &             19066 \\
+\textbf{233  } &                                                          High school teacher &                     0.00780 &           28602 &           30313 &             53149 \\
+\textbf{222  } &                                                                       Nurses &                     0.00900 &           83460 &           84060 &            147208 \\
+\textbf{227  } &              Naprapaths, physiotherapists, occupational therapists and other &                     0.01244 &           18903 &           20449 &             35686 \\
+\textbf{142  } &                                             Managers in preschool activities &                     0.01500 &            4072 &            4771 &              8304 \\
+\textbf{154  } &                                    Managers and leaders of faith communities &                     0.01655 &             780 &             612 &              1063 \\
+\textbf{133  } &                                                                 R\&D managers &                     0.01750 &            4999 &            6334 &             10997 \\
+\textbf{226  } &                                                                     Dentists &                     0.02150 &            5641 &            6390 &             11049 \\
+\textbf{228  } &                                          Other specialists within healthcare &                     0.02235 &            7909 &           10697 &             18480 \\
+\textbf{137  } &                                        Production and manufacturing managers &                     0.03000 &           14998 &           17013 &             29162 \\
+\textbf{231  } &                                                 Teachers in higher education &                     0.03200 &           35501 &           36446 &             62343 \\
+\textbf{131  } &                                              Information technology managers &                     0.03500 &           11758 &           11522 &             19648 \\
+\textbf{267  } &                                                          Priests and deacons &                     0.03789 &            3917 &            3743 &              6363 \\
+\textbf{225  } &                                                                Veterinarians &                     0.03800 &            2100 &            2536 &              4311 \\
+\textbf{149  } &                                              Other managers within education &                     0.04820 &             795 &            1240 &              2085 \\
+\textbf{266  } &                                              Social secretaries and curators &                     0.05375 &           33112 &           46363 &             77525 \\
+\textbf{121  } &                                                     Chief Financial Officers &                     0.06900 &           16630 &           18302 &             30110 \\
+\textbf{214  } &                                             Advanced engineering occupations &                     0.07375 &           83636 &           97891 &            160228 \\
+\textbf{234  } &                                  Teachers at elementary and pre-school level &                     0.08153 &          183152 &          192557 &            312531 \\
+\textbf{172  } &                                              Restaurant and kitchen managers &                     0.08300 &            6461 &            7811 &             12657 \\
+\textbf{153  } &                                                Managers within elederly care &                     0.08365 &            9066 &            9832 &             15921 \\
+\textbf{251  } &                                    IT-architects, systemdevelopes and others &                     0.08389 &          101543 &          129323 &            209359 \\
+\textbf{112  } &                                                      Assorted Chief Officers &                     0.08750 &           22860 &           21895 &             35305 \\
+\textbf{217  } &                                                                    Designers &                     0.09064 &           12416 &           15391 &             24732 \\
+\textbf{344  } &                                              Trafic teachers and instructors &                     0.09331 &            5358 &            6334 &             10148 \\
+\textbf{235  } &                          Other teachers with theoretical, special competence &                     0.10025 &           33313 &           36817 &             58538 \\
+\textbf{111  } &                                             Politicians and higher officials &                     0.10050 &            3876 &            3028 &              4813 \\
+\textbf{161  } &                                   Managers in banking, finance and insurance &                     0.10540 &            7180 &            5588 &              8833 \\
+\textbf{223  } &                                                                 Other nurses &                     0.11167 &           20933 &           22043 &             34603 \\
+\textbf{125  } &                                                 Sales and marketing managers &                     0.11700 &           30741 &           32321 &             50433 \\
+\textbf{312  } &                                   Construction and manufacturing supervisors &                     0.11867 &           19003 &           25192 &             39234 \\
+\textbf{242  } &                                 Organisational developers and HR-specialists &                     0.12581 &           90289 &          113928 &            175997 \\
+\textbf{341  } &                                              Treatment assitants and pastors &                     0.13000 &           18571 &           21218 &             32620 \\
+\textbf{213  } &  Biologists, pharmacologists and specialists within agriculture and forestry &                     0.13052 &            6466 &            7044 &             10823 \\
+\textbf{323  } &                                           Therapists in alternative medicine &                     0.13056 &              86 &             117 &               179 \\
+\textbf{124  } &                                   Information, communication and PR managers &                     0.13371 &            3319 &            4418 &              6763 \\
+\textbf{232  } &                                             Teacher in occupational subjects &                     0.13440 &           10261 &           10159 &             15539 \\
+\textbf{342  } &                                                 Athletes and leisure coaches &                     0.14278 &           20438 &           27120 &             41081 \\
+\textbf{212  } &                                  Mathematicians, actuaries and statisticians &                     0.14840 &            1717 &            2282 &              3434 \\
+\textbf{136  } &                            Construction, plant and mine operational managers &                     0.16367 &           15933 &           18401 &             27194 \\
+\textbf{179  } &                                                       Other service managers &                     0.16875 &            6319 &            7243 &             10639 \\
+\textbf{351  } &                                   Operation, support and network technicians &                     0.18000 &           45096 &           46896 &             67954 \\
+\textbf{261  } &                                                                      Lawyers &                     0.18429 &           19601 &           22687 &             32702 \\
+\textbf{174  } &                                   Managers within wellnes, sport and leisure &                     0.19700 &             790 &            1500 &              2128 \\
+\textbf{173  } &                                                        Managers within trade &                     0.20000 &            9659 &           10567 &             14938 \\
+\textbf{264  } &                                         Authors, journalists and translators &                     0.22725 &           13590 &           14763 &             20159 \\
+\textbf{243  } &                                               Marketing and public relations &                     0.23060 &           31743 &           39171 &             53258 \\
+\textbf{531  } &                                             Childcare and student assistants &                     0.24000 &           98543 &          126842 &            170351 \\
+\textbf{159  } &                                      Other managers within societal services &                     0.25000 &           15956 &           17310 &             22941 \\
+\textbf{134  } &                                        Architecture and engineering managers &                     0.25000 &            8423 &           11584 &             15352 \\
+\textbf{218  } &                      Specialists within environmental- and health protection &                     0.26678 &            7128 &            8710 &             11285 \\
+\textbf{262  } &                                        Museum superintendents and librarians &                     0.28411 &            9854 &           10924 &             13819 \\
+\textbf{216  } &                                                     Architects and surveyors &                     0.29060 &           10012 &           12049 &             15104 \\
+\textbf{129  } &                                    Other administration and service managers &                     0.29765 &           19059 &           24002 &             29789 \\
+\textbf{211  } &                                             Physicists, chemists and similar &                     0.29964 &            5860 &            6415 &              7939 \\
+\textbf{122  } &                                                    Personell and HR officers &                     0.32393 &            7684 &            8876 &             10604 \\
+\textbf{514  } &                                                   Beauty and body therapists &                     0.34342 &            7154 &           10672 &             12382 \\
+\textbf{135  } &                                      Real estate and administration managers &                     0.35500 &            2863 &            4026 &              4588 \\
+\textbf{516  } &                                                       Other servicepersonell &                     0.35526 &            2522 &            3975 &              4528 \\
+\textbf{345  } &                                                         Chefs and sous chefs &                     0.36500 &            3376 &            4031 &              4523 \\
+\textbf{511  } &                                       Cabin crew, train personell and guides &                     0.36888 &            7975 &            8788 &              9801 \\
+\textbf{534  } &                                   Caretakers, carers and personal assistants &                     0.37022 &          144685 &          162602 &            180960 \\
+\textbf{332  } &                           Insurance advisors, business sales and purchasing  &                     0.37277 &          136702 &          137701 &            152627 \\
+\textbf{315  } &                                            Pilots, ship and machine officers &                     0.37713 &            4970 &            5342 &              5879 \\
+\textbf{265  } &                                                Artists, musicians and actors &                     0.38005 &            8435 &            9927 &             10875 \\
+\textbf{532  } &                                                             Assistant nurses &                     0.40056 &          181670 &          183057 &            193910 \\
+\textbf{336  } &                                                              Police officers &                     0.40097 &           16395 &           16319 &             17274 \\
+\textbf{343  } &                          Photographers, decorators and entertainment artists &                     0.41637 &            6440 &            7108 &              7330 \\
+\textbf{533  } &                                                           Nursing assistants &                     0.41900 &           76879 &           76698 &             78746 \\
+\textbf{123  } &                                         Administration and planning managers &                     0.42312 &           10208 &           10864 &             11075 \\
+\textbf{335  } &                                             Tax and social security officers &                     0.43500 &           44828 &           44014 &             43944 \\
+\textbf{324  } &                                                     Animal nurses and others &                     0.44450 &            1839 &            2767 &              2716 \\
+\textbf{311  } &                                                    Engineers and technicians &                     0.44948 &           93243 &          107702 &            104777 \\
+\textbf{911  } &                                              Cleaners and home service staff &                     0.46571 &           70619 &           78575 &             74187 \\
+\textbf{333  } &                                                     Intermediares and others &                     0.47090 &           31974 &           32167 &             30075 \\
+\textbf{541  } &                                                  Other security proffessions &                     0.47885 &           36272 &           38724 &             35662 \\
+\textbf{331  } &                                                      Bankers and accountants &                     0.51447 &           56713 &           57890 &             49669 \\
+\textbf{933  } &                                                Harbor workers and ramp staff &                     0.52800 &            6883 &           10034 &              8369 \\
+\textbf{132  } &                                 Purchasing, logistics and transport managers &                     0.53031 &           10087 &           11454 &              9506 \\
+\textbf{742  } &                         Electronics repairers and communication electricians &                     0.53373 &            9603 &           10671 &              8792 \\
+\textbf{241  } &                            Accountants, financial analysts and fund managers &                     0.53477 &           45439 &           51028 &             41951 \\
+\textbf{741  } &                                     Installation and industrial electricians &                     0.53894 &           39365 &           43793 &             35680 \\
+\textbf{833  } &                                                         Truck and bus driver &                     0.54467 &           78337 &           81346 &             65453 \\
+\textbf{321  } &              Biomedical analysts, dental technicians and labratory engineers &                     0.57239 &           26210 &           27132 &             20502 \\
+\textbf{832  } &                                           Car, motorcycle and bicycle driver &                     0.58362 &           18014 &           18825 &             13851 \\
+\textbf{723  } &                                              Vehicle mechanics and repairers &                     0.59464 &           54866 &           62316 &             44638 \\
+\textbf{325  } &                                                            Dental hygienists &                     0.59500 &            3671 &            3831 &              2741 \\
+\textbf{535  } &                                                                Dental nurses &                     0.59500 &           10192 &           10509 &              7521 \\
+\textbf{753  } &                                    Tailors, wallpapers and leather craftsmen &                     0.60135 &            2099 &            2379 &              1675 \\
+\textbf{352  } &                                        Image, sound and lighting technicians &                     0.61083 &            3633 &            4345 &              2988 \\
+\textbf{612  } &                                               Animal breeders and caretakers &                     0.61200 &            7063 &            8465 &              5804 \\
+\textbf{912  } &                          Washers, window cleaners and other cleaning workers &                     0.61333 &            3529 &            7110 &              4858 \\
+\textbf{961  } &                                                            Recycling workers &                     0.62967 &            8379 &            9000 &              5889 \\
+\textbf{522  } &                                                                   Shop staff &                     0.63730 &          205147 &          226353 &            145078 \\
+\textbf{731  } &                                                 Fine mechanics and craftsmen &                     0.63787 &            3825 &            4113 &              2632 \\
+\textbf{831  } &                                             Locomotive driver and yard staff &                     0.63867 &            5347 &            5618 &              3587 \\
+\textbf{334  } &                    Legal secretary, chief secretary and department secretary &                     0.63950 &            9498 &           17615 &             11221 \\
+\textbf{712  } &                              Ceiling fittings, flooring and plumbing workers &                     0.66692 &           34242 &           37942 &             22332 \\
+\textbf{711  } &                                    Carpenter, mason and construction workers &                     0.66976 &           93307 &          108606 &             63380 \\
+\textbf{611  } &                                   Plant growers in agriculture and gardening &                     0.67000 &           16517 &           18381 &             10718 \\
+\textbf{421  } &                                                Croupiers and debt collectors &                     0.67167 &            1782 &            2356 &              1366 \\
+\textbf{443  } &                                                             Elected official &                     0.67457 &             548 &             962 &               553 \\
+\textbf{138  } &                                            Forestry and agriculture managers &                     0.67513 &             514 &             758 &               435 \\
+\textbf{819  } &                                Operating technicians and process supervisors &                     0.69513 &           18922 &           19543 &             10528 \\
+\textbf{932  } &                                       Hand packers and other factory workers &                     0.70500 &           12606 &           11291 &              5886 \\
+\textbf{621  } &                                                             Forestry workers &                     0.71857 &            3466 &            3644 &              1812 \\
+\textbf{622  } &                                                  Fishery workers and fishers &                     0.72000 &             474 &             604 &               298 \\
+\textbf{835  } &                                                        Sailors and deckhands &                     0.72500 &            1063 &            1398 &               679 \\
+\textbf{732  } &                               Prepress technicians, printers and bookbinders &                     0.72750 &            8704 &            7702 &              3708 \\
+\textbf{422  } &                  Travel agents, customer service personell and receptionists &                     0.72760 &           53131 &           65140 &             31356 \\
+\textbf{834  } &                                                              Machine drivers &                     0.72908 &           33370 &           37492 &             17949 \\
+\textbf{512  } &                                                Cooks and cold bar attendants &                     0.73200 &           37220 &           41600 &             19701 \\
+\textbf{817  } &                                   Process operators, wood and paper industry &                     0.73429 &           16346 &           16805 &              7890 \\
+\textbf{613  } &                          Plant breeders and animal breeders, mixed operation &                     0.76000 &            3612 &            3687 &              1563 \\
+\textbf{811  } &                              The ore processing profession and well drillers &                     0.77273 &            8405 &            8542 &              3430 \\
+\textbf{432  } &                                     Warehouse workers and transport managers &                     0.77711 &           87463 &          101966 &             40162 \\
+\textbf{721  } &                                     Casters, welders and sheet metal blowers &                     0.77714 &           25106 &           27022 &             10641 \\
+\textbf{515  } &                                      Cleaning managers and property managers &                     0.78000 &           39417 &           45555 &             17710 \\
+\textbf{761  } &                                         Butchers, bakers and food processors &                     0.78100 &            7436 &            8488 &              3284 \\
+\textbf{713  } &                                        Painters, lacquers and chimney sweeps &                     0.78125 &           23322 &           26289 &             10162 \\
+\textbf{818  } &                                          Other process and machine operators &                     0.81285 &            8511 &            7781 &              2573 \\
+\textbf{816  } &                                             Machine operators, food industry &                     0.81600 &           15482 &           15901 &              5170 \\
+\textbf{931  } &                          Rough workers in construction and civil engineering &                     0.81778 &            5076 &            7375 &              2374 \\
+\textbf{962  } &                 Newspaper distributors, custodians and other service workers &                     0.82885 &           38426 &           39719 &             12012 \\
+\textbf{752  } &                             Surface finishers, wood and furniture carpenters &                     0.83375 &           10666 &           11200 &              3290 \\
+\textbf{722  } &                                                   Blacksmiths and toolmakers &                     0.85000 &           53171 &           52175 &             13830 \\
+\textbf{524  } &                                                Event sales and telemarketing &                     0.85500 &            8201 &            8637 &              2213 \\
+\textbf{513  } &                                         Head waitors, waitors and bartenders &                     0.85667 &           21491 &           26254 &              6649 \\
+\textbf{442  } &                                                        Mail and post workers &                     0.86000 &           18200 &           17093 &              4228 \\
+\textbf{815  } &                     Machine operators, textile, laundry and leather industry &                     0.86571 &            5280 &            5438 &              1290 \\
+\textbf{813  } &                      Machine operators, chemical and pharmaceutical products &                     0.86714 &            5509 &            5279 &              1239 \\
+\textbf{814  } &                   Machine operators, rubber, plastic and stationery industry &                     0.87368 &           13743 &           14204 &              3170 \\
+\textbf{812  } &                     Process and machine operators, at steel and metal plants &                     0.88000 &           15788 &           17573 &              3726 \\
+\textbf{411  } &                                            Office assistants and secretaries &                     0.88297 &          172049 &          171935 &             35557 \\
+\textbf{921  } &                                                   Berry pickers and planters &                     0.88333 &            2600 &            3144 &               648 \\
+\textbf{941  } &                           Fast food staff, kitchen and restaurant assistants &                     0.88625 &           68912 &           79038 &             15887 \\
+\textbf{821  } &                                                                   Installers &                     0.91571 &           53785 &           61879 &              9216 \\
+\textbf{952  } &                                                    Square and market vendors &                     0.92000 &             121 &             190 &                26 \\
+\textbf{523  } &                                                          Cashiers and others &                     0.93400 &           13567 &           13400 &              1562 \\
+\textbf{441  } &                                               Library and Archive Assistants &                     0.95750 &            3408 &            3320 &               249 \\
 \end{longtable}
