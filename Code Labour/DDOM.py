@@ -312,14 +312,15 @@ def calibration_calculation(empirical_data, model_data, A_e, period):
 
     plt.plot(empirical_data['u_trend'], empirical_data['sa_vac_rate'], color = cols[1], ls = '-', marker = 'o', linewidth = 1,
              markersize = 2, 
-             label = 'Empirical data from ' + str(empirical_data['date'][0]) + ' to ' + str(empirical_data['date'][-1]))
+             label = 'Empirical data from \n' + str(empirical_data['date'][0]) + ' to ' + str(empirical_data['date'][-1]))
     plt.plot(m_unemployed, m_vac_rate, color = cols[0], ls = '-', marker = 'o', linewidth = 1, markersize = 2, 
              label = 'model output')
-    # plt.savefig('../Graphs/Beveridge_curve.pdf', dpi=425, bbox_inches='tight')
+    
     ax.grid(linewidth=2, color='#999999', alpha=0.4)
     ax.tick_params(axis='both', which='both', labelsize=13,
                 labelbottom=True, bottom=True, labelleft=True, left=True)
     plt.legend(bbox_to_anchor=(0.99, 0.99), loc='upper right', borderaxespad=0.)
+    # plt.savefig('../Graphs/Bev_sim_ex.pdf', dpi=425, bbox_inches='tight')
     plt.show()
 
     u_ss = m_unemployed[-1]
@@ -374,7 +375,7 @@ def calibration_calculation(empirical_data, model_data, A_e, period):
 def simulation(G, delta_u, delta_nu, gamma_u, gamma_nu, timestep, period, shock_period, 
                 k, avg_hours_0, t_0, attributes, long_term = False, complete_network = False):
     '''
-    Set attribute data of occupational mobility netowrk and carry out the simulation for a specified number of timesteps
+    Set attribute data of occupational mobility network and carry out the simulation for a specified number of timesteps
 
     Parameters:
     -----------
@@ -389,7 +390,7 @@ def simulation(G, delta_u, delta_nu, gamma_u, gamma_nu, timestep, period, shock_
     '''
 
     if complete_network == True:
-        G = nx.complete_graph(G, nx.DiGraph())
+        G = nx.complete_graph(G, nx.DiGraph)
         edges = G.edges()
         weights = {edge: 1/len(G) for edge in edges}
         nx.set_edge_attributes(G, weights, 'weight')
@@ -399,7 +400,7 @@ def simulation(G, delta_u, delta_nu, gamma_u, gamma_nu, timestep, period, shock_
     
     pre_steps = int(period*52/timestep)*2 # Steps before the automation shock
     shock_steps = int(shock_period*52/timestep) # Steps during the automation shock
-    post_steps = int(shock_period*52/timestep)*2 # Steps after the automation shock
+    post_steps = int(period*52/timestep)*2 # Steps after the automation shock
 
     timesteps = pre_steps + shock_steps + post_steps
     
@@ -481,7 +482,7 @@ def simulation(G, delta_u, delta_nu, gamma_u, gamma_nu, timestep, period, shock_
     
 def deterministic_simulation(G, delta_u, delta_nu, gamma_u, gamma_nu, timestep, period, attributes, 
                              t_0 = None, avg_hours_0 = None, k = None, shock_period = None, long_term = False, 
-                             complete_network = False, calibration = False, empirical_data = None, a = 0.03):
+                             complete_network = False, calibration = False, steady_state = False, empirical_data = None, a = 0.03):
 
     # if calibration == True and empirical_data == None:
     #    print('EEROR: Empirical data must be input for calibration run')
@@ -503,11 +504,13 @@ def deterministic_simulation(G, delta_u, delta_nu, gamma_u, gamma_nu, timestep, 
         nx.set_node_attributes(G, value, str(key))
 
     # Translate period (in years) into timesteps where timestep is the number of weeks between steps
-    if calibration == False:
+    if calibration == False and steady_state == False:
         pre_steps = int(period*52/timestep)*2 # Steps before the automation shock
         shock_steps = int(shock_period*52/timestep) # Steps during the automation shock
         post_steps = int(period*52/timestep)*2 # Steps after the automation shock
         timesteps = pre_steps + shock_steps + post_steps
+    elif steady_state == True:
+        timesteps = int(period*52/timestep)
     else:
         pre_steps = int(period*52/timestep) # Steps before the automation shock
         timesteps = pre_steps*3
@@ -649,12 +652,24 @@ def deterministic_simulation(G, delta_u, delta_nu, gamma_u, gamma_nu, timestep, 
             f_i_data.append(new_f_i)
 
         # Implement automation shock
-        if calibration == False:
+        if steady_state == True:
+            continue
+        elif calibration == False:
             if pre_steps < t and t < shock_steps + pre_steps:
                 shock(G, demand_0, final_demand, t*timestep/52, t_0 + pre_steps*timestep/52, k)
         else:
             if pre_steps < t:
                 update_target_demand(G, demand_0, t, pre_steps, a)
+        
+    if steady_state == True:
+        time = dt.datetime.now()- time
+        print('simulation took:', time)
+        ss_vacs = sum([vac for vac in vac_data[-1].values()])
+        ss_emp = sum([emp for emp in emp_data[-1].values()])
+        ss_unemp = sum([unemp for unemp in unemp_data[-1].values()])
+        ss_vac_rate = ss_vacs*100/(ss_vacs + ss_emp)
+        ss_unemp_rate = ss_unemp*100/(ss_unemp + ss_emp)
+        return [ss_unemp_rate, ss_vac_rate]
     
     if calibration == True:
         model_data = {'vacancies': vac_data, 'unemployment': unemp_data, 'employment':emp_data}
@@ -668,7 +683,6 @@ def deterministic_simulation(G, delta_u, delta_nu, gamma_u, gamma_nu, timestep, 
         cost['A_e'] = A_e.area
         time = dt.datetime.now()- time
         print('Simulation took: ', time)
-
         return cost
 
     
