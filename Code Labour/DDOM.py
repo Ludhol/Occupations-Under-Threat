@@ -215,7 +215,7 @@ def update_target_demand(G, demand_0, t, T, a):
 
     target_demand = {}
     for node in G.nodes():
-        target_demand[node] = round(demand_0[node]*(1 - a*np.sin(t*2*np.pi/T)))
+        target_demand[node] = demand_0[node]*(1 - a*np.sin(t*2*np.pi/T))
 
     nx.set_node_attributes(G, target_demand, 'target_demand')
 
@@ -229,7 +229,7 @@ def calculate_long_term_unemployment(G, delta_u, gamma_u, t, unemp_data, f_i_dat
     current_demand = {occ:vac + employed[occ] for occ, vac in vacancies.items()}
     for i in employed.keys():
         if 500 >= l:
-            demand_diff = round(np.max([0, current_demand[i] - target_demand[i]]))
+            demand_diff = np.max([0, current_demand[i] - target_demand[i]])
             omega = e_0[i] * (delta_u + (1 - delta_u)*gamma_u*demand_diff/employed[i])
             temp_sum = 0
              # Calculate long term unemployment
@@ -280,7 +280,7 @@ def shock(G, demand_0, final_demand, t, t_0, k):
 
     for key in demand_0.keys():
         demand_shock[key] = (final_demand[key] - demand_0[key])/(1 + math.exp(-k*(t-t_0)))
-        target_demand[key] = round(demand_0[key] + demand_shock[key])
+        target_demand[key] = demand_0[key] + demand_shock[key]
 
     nx.set_node_attributes(G, target_demand, 'target_demand')
 
@@ -428,7 +428,7 @@ def simulation(G, delta_u, delta_nu, gamma_u, gamma_nu, timestep, period, shock_
     final_average_hours_worked = sum(final_hours_worked.values())/L
 
     # Post shock demand
-    final_demand = {occupation: round(hours/final_average_hours_worked) for occupation, hours in final_hours_worked.items()}
+    final_demand = {occupation: hours/final_average_hours_worked for occupation, hours in final_hours_worked.items()}
 
     # Print when the simulation starts
     time = dt.datetime.now()
@@ -542,7 +542,7 @@ def deterministic_simulation(G, delta_u, delta_nu, gamma_u, gamma_nu, timestep, 
     final_average_hours_worked = sum(final_hours_worked.values())/L
 
     # Post shock demand
-    final_demand = {occupation: round(hours/final_average_hours_worked) for occupation, hours in final_hours_worked.items()}
+    final_demand = {occupation: hours/final_average_hours_worked for occupation, hours in final_hours_worked.items()}
 
     occupations = G.nodes()
     time = dt.datetime.now()
@@ -598,31 +598,31 @@ def deterministic_simulation(G, delta_u, delta_nu, gamma_u, gamma_nu, timestep, 
         for i in occupations:
             # Set the current demand of the occupation
             current_demand[i] = nu[i] + e[i]
-            demand_diff = round(np.max([0, current_demand[i] - target_demand[i]]))
+            demand_diff = np.max([0, current_demand[i] - target_demand[i]])
 
             # Calculate the inflow of employees to the occupation 
-            f_i = round(np.sum([f[(j,i)] for j in G.predecessors(i)]))
+            f_i = np.sum([f[(j,i)] for j in G.predecessors(i)])
             # saved since timeseries is required to calculate long term unemployed
             if long_term == True:
                 new_f_i[i] = f_i
 
             # Calculate new amount of employees
-            new_e[i] = round(e[i] - delta_u*e[i] - (1 - delta_u)*gamma_u*demand_diff + f_i)
+            new_e[i] = e[i] - delta_u*e[i] - (1 - delta_u)*gamma_u*demand_diff + f_i
 
             # Calculate outflow of unemployed workers
-            f_j = round(np.sum([f[(i,j)] for j in G.successors(i)]))
+            f_j = np.sum([f[(i,j)] for j in G.successors(i)])
 
             # Calculate new amount of unemployed workers
-            new_u[i] = round(u[i] + delta_u*e[i] + (1 - delta_u)*gamma_u*demand_diff - f_j)
+            new_u[i] = u[i] + delta_u*e[i] + (1 - delta_u)*gamma_u*demand_diff - f_j
             
             # Calculate new vacancies
-            demand_diff = round(np.max([0, target_demand[i]-current_demand[i]]))
-            new_nu[i] = round(nu[i] + delta_nu*e[i] + (1-delta_nu)*gamma_nu*demand_diff - f_i) 
+            demand_diff = np.max([0, target_demand[i]-current_demand[i]])
+            new_nu[i] = nu[i] + delta_nu*e[i] + (1-delta_nu)*gamma_nu*demand_diff - f_i
 
             # Used to calculate long term unemployment (time-consuming)
             l = round(27/timestep)
             if long_term == True and t >=l:
-                demand_diff = round(np.max([0, current_demand[i] - target_demand[i]]))
+                demand_diff = np.max([0, current_demand[i] - target_demand[i]])
                 omega = e_0[i] * (delta_u + (1 - delta_u)*gamma_u*demand_diff/e[i])
                  # Calculate long term unemployment
 
@@ -631,7 +631,7 @@ def deterministic_simulation(G, delta_u, delta_nu, gamma_u, gamma_nu, timestep, 
                     lt_u_k = long_term_u(unemp_data, f_i_data, omega, l - 1, t-1, i)*(1 - f_i_data[t-1][i]/u[i])
                     l +=1
                     temp_sum += lt_u_k
-                new_lt_u[i] = round(temp_sum)
+                new_lt_u[i] = temp_sum
 
            
         # Update network with new values
